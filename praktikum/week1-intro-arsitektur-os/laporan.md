@@ -1,20 +1,19 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik: Arsitektur dan Fungsi Kernel dalam Sistem Operasi Modern 
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : PUTRI AMALIYA RAHMADANI 
+- **NIM**   : 250202924
+- **Kelas** : 1IKRA 
 
 ---
 
 ## Tujuan
 Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+> Mampu menganalisis arsitektur dan fungsi kernel dalam sistem operasi modern.
 
 ---
 
@@ -47,11 +46,7 @@ dmesg | head
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
 
----
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
@@ -59,13 +54,12 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
-
+1. Pertanyaan:Sebutkan tiga fungsi utama sistem operasi.
+   Jawaban   :Mengelola sumber daya, mengatur proses, mengatur data dan penyimpanan 
+2. Pertanyaan:Jelaskan perbedaan anatara kernel mode dan user mode.
+   Jawaban   :Kernel Mode memberikan kontrol penuh atas sistem dan perangkat kerasnya, sementara User Mode beroperasi                   dengan akses terbatas untuk memastikan keamanan, stabilitas, dan integritas sistem secara keseluruhan.
+3. Pertanyaan:Sebutkan contoh OS dengan arsitektur monolithic dan microkernel.
+   Jawaban   :Contoh sistem operasi arsitektur monolithic yaitu Linux dan Windows, sedangkan contoh sistem operasi dengan               arsitektur mikro-kernel yaitu QNX dan MINIX.
 ---
 
 ## Refleksi Diri
