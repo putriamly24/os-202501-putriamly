@@ -61,7 +61,7 @@ dmesg | head
 • Pilihan yang Tepat: Saya menyadari bahwa memilih platform komputasi yang tepat sangat penting untuk mengoptimalkan kinerja dan produktivitas, dan setiap sistem memiliki kelebihan dan kekurangan yang perlu dipertimbangkan.
 • Kelebihan yang Berbeda: Menurut pengalaman saya, sistem operasi open-source menawarkan fleksibilitas dan kontrol yang sangat berguna untuk pengembangan dan kebutuhan teknis, sedangkan sistem operasi komersial unggul dalam kemudahan penggunaan dan kompatibilitas aplikasi.
 • Pengambilan Keputusan yang Bijak: Dengan memahami perbedaan antara kedua sistem operasi tersebut, saya dapat membuat keputusan yang lebih tepat dan sesuai dengan kebutuhan saya, sehingga meningkatkan efisiensi dan produktivitas dalam penggunaan teknologi.
----
+
 
 ## Quiz
 1. Pertanyaan:Sebutkan tiga fungsi utama sistem operasi.
@@ -70,7 +70,7 @@ dmesg | head
    Jawaban   :Kernel Mode memberikan kontrol penuh atas sistem dan perangkat kerasnya, sementara User Mode beroperasi                   dengan akses terbatas untuk memastikan keamanan, stabilitas, dan integritas sistem secara keseluruhan.
 3. Pertanyaan:Sebutkan contoh OS dengan arsitektur monolithic dan microkernel.
    Jawaban   :Contoh sistem operasi arsitektur monolithic yaitu Linux dan Windows, sedangkan contoh sistem operasi dengan               arsitektur mikro-kernel yaitu QNX dan MINIX.
----
+
 
 ## Refleksi Diri
 Tuliskan secara singkat:
