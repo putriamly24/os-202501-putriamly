@@ -1,5 +1,5 @@
 
-# Laporan Praktikum Minggu [X]
+# Laporan Praktikum Minggu 1
 Topik: Arsitektur dan Fungsi Kernel dalam Sistem Operasi Modern 
 
 ---
@@ -26,11 +26,46 @@ Tuliskan tujuan praktikum minggu ini.
 5.Memilih Sistem Operasi yang Tepat: Memilih sistem operasi yang sesuai dengan kebutuhan kita sangat penting, supaya kita bisa bekerja dengan lebih efisien dan produktif. Jadi, kita perlu mempertimbangkan apa yang kita butuhkan dari sistem operasi sebelum membuat berbagai keputusan.
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1. **Setup Environment**
+   - Pastikan Linux (Ubuntu/WSL) sudah terinstal.
+   - Pastikan Git sudah dikonfigurasi dengan benar:
+     ```bash
+     git config --global user.name "Nama Anda"
+     git config --global user.email "email@contoh.com"
+     ```
 
+2. **Diskusi Konsep**
+   - Baca materi pengantar tentang komponen OS.
+   - Identifikasi komponen yang ada pada Linux/Windows/Android.
+
+3. **Eksperimen Dasar**
+   Jalankan perintah berikut di terminal:
+   ```bash
+   uname -a
+   whoami
+   lsmod | head
+   dmesg | head
+   ```
+   Catat dan analisis modul kernel yang tampil.
+
+4. **Membuat Diagram Arsitektur**
+   - Buat diagram hubungan antara *User → System Call → Kernel → Hardware.*
+   - Gunakan **draw.io** atau **Mermaid**.
+   - Simpan hasilnya di:
+     ```
+     praktikum/week1-intro-arsitektur-os/screenshots/diagram-os.png
+     ```
+
+5. **Penulisan Laporan**
+   - Tuliskan hasil pengamatan, analisis, dan kesimpulan ke dalam `laporan.md`.
+   - Tambahkan screenshot hasil terminal ke folder `screenshots/`.
+
+6. **Commit & Push**
+   ```bash
+   git add .
+   git commit -m "Minggu 1 - Arsitektur Sistem Operasi dan Kernel"
+   git push origin main
+   ```
 ---
 
 ## Kode / Perintah
