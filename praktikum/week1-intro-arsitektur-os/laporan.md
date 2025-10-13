@@ -5,7 +5,7 @@ Topik: Arsitektur dan Fungsi Kernel dalam Sistem Operasi Modern
 ---
 
 ## Identitas
-- Nama  : PUTRI AMALIYA RAHMADANI 
+- Nama  : PUTRI AMALIYA RAHMADANI  
 - NIM   : 250202924
 - Kelas : 1IKRA 
 
