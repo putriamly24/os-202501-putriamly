@@ -42,9 +42,11 @@ dmesg | head
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
-!
+![Screenshot hasil](<screenshots/stracels1.png>)
+![Screenshot hasil](<screenshots/stracels2.png>)
+![Screenshot hasil](<screenshots/stracels3.png>)
+![Screenshot hasil](<screenshots/strace-e.png>)
+![Screenshot hasil](<screenshots/dmesg.png>)
 
 ---
 
