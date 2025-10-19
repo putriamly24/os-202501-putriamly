@@ -51,16 +51,30 @@ dmesg | head
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+- Makna Hasil Percobaan
+  Untuk hasil percobaan yang telah dilakukan,bisa kita lihat kalau setiap progam yang dijalankan itu tidak langsung berinteraksi sama 
+  hardware,melainkan harus melewati system call terebih dahulu.  
+- Hubungan hasil dengan teori (fungsi kernel, system call, arsitektur OS).
+  1.Fungsi Kernel
+    Secara teori,kernel merupakan inti dari semua sistem operasi yang mengatur atau sebagai kunci sumber daya pada komputer.Dari 
+    berbagai percobaan yang terlihat yaitu ketika kernel menerima system call dari user,mengerjakan semua prosesnya,dan dikembalikan 
+    hasilnya ke progam.
+  2.Peran System Call
+    Teorinya,system call menjadi cara buat proses perpindahan dari user mode ke kernel mode.Untuk hasil pasti sesuai,karena progam yang 
+    kita jalani pasti melewat tahap itu dulu sebelum mengaksses hardware.
+  3.Arsitektur OS
+    Berdasarkan teori yang menjelaskan alurnya:
+    User Progam-System Call-Kernel-Hardware-Kembali lagi ke user progam,untuk alur ini sudah sesuai,karena prosesnya sama dengan yang 
+    dikerjakn dengan konsep OS modern. 
+-Perbedaan hasil di lingkungan OS berbeda (Linux vs Windows).
+ Pada sistem operasi Linux,proses system call dapat dilihat dengan jelas,karena mempunyai sifat yang terbuka(open source).Linux yang menggunakan konsep system call bisa melacak penggunaan perintah seperti strace.Sedangkan pada windows menggunakan API untuk melakukan fungsi yang sama seperti pada halnya linux.Tetapi pada windows prosesnya lebih tertutup dan tidak mudal terlihat karena prose keamanannya lebih ketat dana aman.  
 
 ---
 
 ## Kesimpulan
-1.System call itu merupakan bagian yang penting banget pada sistem operasi,karena menjadi penghubung antara progam yang dikerjakan sama kernel.Lewt system call ini progam bisa meminta layanan dari sistem operasi secara aman dan terjaga keamanannya.
-2.Keamanan sistem operasi juga banyak bergantung sama dengan system call,alasannya karena setiap pada saat perpndahan dari usr mode ke kernel mode harus melewati meknisme ini.Dengan demikian,sistem bis mengecek dulu izizn dan vaaliditas akses.
-3.Sistem call juga menjddi pelindung utama sistem operasi.Fungsiya dan tujuan bukan cuma buat mengatur permintaaan sistem tetapi juga keamanan dan performa sistem terjaga agar teetaap aman.
+1.System call itu merupakan bagian yang sangat penting pada sistem operasi,karena menjadi penghubung antara progam yang dikerjakan sama kernel.Lewat system call ini progam bisa meminta layanan dari sistem operasi secara aman dan terjaga keamanannya.
+2.Keamanan sistem operasi juga banyak bergantung dengan system call,alasannya karena setiap pada saat perpndahan dari user mode ke kernel mode harus melewati mekanisme ini.Dengan demikian,sistem bisa mengecek dulu izin dan validitas akses.
+3.Sistem call juga menjadi pelindung utama sistem operasi.Fungsiya dan tujuan bukan cuma buat mengatur permintaaan sistem tetapi juga keamanan dan performa sistem terjaga agar tetap aman.
 
 ---
 ## Tugas
