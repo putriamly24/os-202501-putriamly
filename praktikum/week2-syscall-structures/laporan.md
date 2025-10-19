@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik:Eksperimen Fungsi Kernel dan System Call dalam Mengatur Komunikasi Antara Aplikasi dan Hardware
 
 ---
 
@@ -12,23 +12,46 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+-Menyadari pentingnya system call dalam menjaga keamanan progam dengan efisinsi dan stabilitas kerja dalam sistem operasi.
+-Mengetahui peran penting kernel sebagai inti dari semua sistem operasi yang mengatur komunikasi antra perngkat keras dan perangkat 
+ lunak.
+-Dapat mengetahui bagaimana system call berfungsi sebagai perantara antara progam user dengan kernel.
+
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+1.Kernel sebagai pusat sistem operasi
+  Kernel bisa dikatakan sebagai bagian yang paling uatama dari sistem operasi yang menjalankan semua sumber daya di 
+  komputer.Misalnya,mulai dari penggunaan CPU,memori,sampai perangkat-perangkat lainnya seperti  output/input semuanya diatur atau 
+  dijalankan sama kernel agar sistem yang bekerja tetap stabil dan tidak saling mengganggu antar proses.
+2.Peran system call dalam komunikasi progam dan kernel
+  Progam yang dikerjakan oleh user sebenarnya tidak bisa langsung berinteraksi sama hardwar,alasannya disini karena system call jadi 
+  penghubungnya.Melewati system call semua progam bisa meminta layanan ke kernel,contohnya buat baca file,menulis data,atau menjalankan 
+  proses baru.Jadi system call ini semacam jembatan atau perantara antara progam user dan kernel. 
+3.Alur kerja sistem operasi
+  Di dalam sistem operasi mempunyai 2 mode utama:user mode dan kernel mode.Progam yang biasa jalan di user mode dengan hak akses 
+  terbatas,sementara kernel jalan di kernel mode dengan akses penuh ke sistem proses ini sangat berbeda jauh dengan user mode.Jika 
+  progam membutuhkan akses ke parangkat keras,progam bakal lewat system call terlebih dahulu baru dilanjutka ke kernel.Setelah semuanya 
+  selesain akan dikembalikan lagi ke progam.
+4.Keamanan dalam sistem operasi
+  Perpindahan antara user mode dan kernel mode ini dibuat agar sistem yang dikerjakan lebih aman.Tujuannya agar progam tidak bisa 
+  sembarangan masuk atau mengakses sumber daya yang penting.Dengan demikian,sistem operasi bisa dipastikan berjalan sesuai aturan tanpa 
+  adanya sistem eror.
+5.Perbedaan linux dan windows
+  Walaupun fungsinya sama,cara bekerja di Linux dan Windows sedikit berbeda.Di Linux,semua prosesnya lebih terbuka dan masih bisa 
+  dipantau pakai peintah strace.Sedangkan di Windows,lebih tertutup dan ketat karena melewati API,tapi inti dari keduanya tetap sama 
+  yaitu menjadi penghubung antara user dan kernel agar progam bisa jalan secara efisisen.
+
 
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
-
+1. Buka terminal di sistem operasi Linux(ubuntu)buat memulai percobaan.
+2. Jalankan perintah strace untuk melihat system  call apa saja yang dibutuhkan waktu progam dikerjakan.
+3. Amati hasil keluarannya dan perhatikan urutan system call yang muncul diterminal.
+4. Mencatat hasil dan analisis hubungan antara system call,kernel,dan cara kerja sistem operasi.    
+5.Setelah semua data didapat,commit hasil percobaannya ke Git agar dokumentasinya rapi dan tersimmpan.   
 ---
 
 ## Kode / Perintah
@@ -67,7 +90,7 @@ dmesg | head
     User Progam-System Call-Kernel-Hardware-Kembali lagi ke user progam,untuk alur ini sudah sesuai,karena prosesnya sama dengan yang 
     dikerjakn dengan konsep OS modern. 
 -Perbedaan hasil di lingkungan OS berbeda (Linux vs Windows).
- Pada sistem operasi Linux,proses system call dapat dilihat dengan jelas,karena mempunyai sifat yang terbuka(open source).Linux yang menggunakan konsep system call bisa melacak penggunaan perintah seperti strace.Sedangkan pada windows menggunakan API untuk melakukan fungsi yang sama seperti pada halnya linux.Tetapi pada windows prosesnya lebih tertutup dan tidak mudal terlihat karena prose keamanannya lebih ketat dana aman.  
+ Pada sistem operasi Linux,proses system call dapat dilihat dengan jelas,karena mempunyai sifat yang terbuka(open source).Linux yang menggunakan konsep system call bisa melacak penggunaan perintah seperti strace.Sedangkan pada windows menggunakan API untuk melakukan fungsi yang sama seperti pada halnya linux.Tetapi pada windows prosesnya lebih tertutup dan tidak mudal terlihat karena prose keamanannya lebih ketat dan aman.  
 
 ---
 
@@ -95,18 +118,22 @@ Dengan demikian,dapat disimpulkan bahwa system call adalah elemen vital dalam de
 ## Quiz
 1. Pertanyaan: Apa fungsi utama system call dalam system operasi?  
    Jawaban   : Fungsi utama system call yaitu jadi perantara antara suatu progam yang kita kerjakan sama sistem operasi.
-               Dengan tidak adanya system call,sistem biasa tidak bisa berhubungan secara langsung sumber daya dari sistem karena keamanan                dan stabilitasnya kurang memenuhi. 
-3. Pertanyaan: Sebutkan 4 kategori system call yang umum digunakan!
+               Dengan tidak adanya system call,sistem biasa tidak bisa berhubungan secara langsung sumber daya dari sistem karena 
+               keamanan dan stabilitasnya kurang memenuhi. 
+2. Pertanyaan: Sebutkan 4 kategori system call yang umum digunakan!
    Jawaban   : Process control,file management,information maintenance,device management.      
-4. Pertanyaan: Mengapa system call tidak bisa dipanggil langsung oleh user progam? 
-   Jawaban   : Alasannya karena progam bekerja di user mode sedangkan system call dikerjakan dikernel mode,jika dijalankan secara paksa maka data-data didalamnya bisa rusak dan keamanan sistem terancam. 
+3. Pertanyaan: Mengapa system call tidak bisa dipanggil langsung oleh user progam? 
+   Jawaban   : Alasannya karena progam bekerja di user mode sedangkan system call dikerjakan dikernel mode,jika dijalankan secara paksa 
+               maka data-data didalamnya bisa rusak dan keamanan sistem terancam. 
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Bagian yang paling menantang saya dalam minggu ini yaitu fokus mengerjakan beberapa tugas kuliah,salah satunya tugas matkul sistem 
+  operasi,yaitu memahami konsep system call dan peran kernel karena materinya cukup sulit bagi saya untuk dipahami.   
+- Cara saya mengatasinya dengan cara bertanya dan berdiskusi dengan teman,santai dulu-main sebentar,makan seblak biar fresh,baru lanjt 
+  ngerjain tugas hihihi.  
 
 ---
 
