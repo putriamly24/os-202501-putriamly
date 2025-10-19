@@ -132,7 +132,7 @@ Dengan demikian,dapat disimpulkan bahwa system call adalah elemen vital dalam de
 Tuliskan secara singkat:
 - Bagian yang paling menantang saya dalam minggu ini yaitu fokus mengerjakan beberapa tugas kuliah,salah satunya tugas matkul sistem 
   operasi,yaitu memahami konsep system call dan peran kernel karena materinya cukup sulit bagi saya untuk dipahami.   
-- Cara saya mengatasinya dengan cara bertanya dan berdiskusi dengan teman,santai dulu-main sebentar,makan seblak biar fresh,baru lanjt 
+- Cara saya mengatasinya dengan cara bertanya dan berdiskusi dengan teman,santai dulu-main sebentar,makan seblak biar fresh,baru lanjut 
   ngerjain tugas hihihi.  
 
 ---
