@@ -103,9 +103,8 @@ dmesg | head
    
 
 ## Tugas
-1.Dokumentasi hasil eksperimen strace dan dmesg dalam bentuk tabel observasi
-
-
+1.Dokumentasi hasil eksperimen strace dan dmesg dalam bentuk tabel observasi 
+2.
 3.Analisis
 System call sangat penting untuk melindungi keamanan kernel alasannya karena telah menyiapkan antarmuka yang terjaga dan dilindungi untuk semua akses yang ada di dalamnya.Kernel juga bisa mengatur dan memantau akses tersebut,serta dapat mencegah akses ilegal dan ancaman keamanan yang bisa membahayakan sistem dan rahasia dari data-data didalamnya,oleh karena itu system operasi bisa bekerja dengan aman tanpa gangguan dan ancaman pada sistem yang bekerja,serta dapat menjaga kepercayaan untuk para pengguna system operasi dan meminimalkan dampak negatif  pada operasional bisnis.System call juga dapat dikatakan sebagai "jantung komunikasi"antara para pengguna progam dan sistem operasi.Setiap kali kita atau para pengguna mengerjakan progam atau aturan-aturan di terminal,sebenarnya aplikasi itu tidak berhubungan secara langsung dengan perangkat-perangkat keras yang dapat membahayakan sistem.Semua data atau keinginan pengguna harus lewat sistem operasi,dan jalan yang digunakan yaitu system call.Contohnya ketika kita memulai untuk membuka file,nulis tes ke terminal yang disediakan ,atau mengakses jaringan pada suatu sistem didalamnya langkah nya semua hars lewat sysem call.Nah jadi dapat disismpulkan pula fungsi utama system call bukan sekedar"alat memanggil layanan OS",tetapi juga dapat mengatur,menjaga,atau memekanisme keamanan agar progam pengguna tidak sembarangan diotak-atik sistem.
 
