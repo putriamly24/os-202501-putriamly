@@ -1,13 +1,13 @@
 
-# Laporan Praktikum Minggu [X]
+# Laporan Praktikum Minggu Ke 4
 Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Putri Amaliya Rahmadani
+- **NIM**   : 250202924
+- **Kelas** : 1 IKRA
 
 ---
 
