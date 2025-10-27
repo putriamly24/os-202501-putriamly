@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu Ke 3
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik:  Penggunaan Perintah chmod dan chown dalam Mengelola Keamanan File dalam Sistem Operasi Linux.
 
 ---
 
@@ -12,14 +12,18 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+-Mahasiswa mampu menjelaskan fungsi dan cara kerja perintah chmod untuk mengatur izin akses file.
+-Mahasiswa mampu menjelaskan fungsi dan cara kerja perintah chown untuk mengubah kepemilikan file.
+-Dapat membedakan cara pengaturan izin file antara sistem operasi Linux dan Windows.
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+1.Sistem Operasi Linux adalah suatu sistem opeasi berbasis Unix yang memiliki sifat terbuka dan telah banyak digunakan diberbagai proyek atau bidang.Linux menyiapkan lingkungan terminal yang memastikan para pengguna dapat berinteraksi langsung dengan sistem melewati perintah-perintah tertentu.
+2.Hak akses (permission) memiliki fungsi yang dapat membatasi dann mengatur izin akses dalam mengerjakan suatu file atau folder.Pengaturan ini bertujuan untuk menjaga keamanan data pada sistem dan mencegah penyalahgunaan akses oleh pengguna lain.
+3.Perintah chmod digunakan untuk mengatur izin akses file pada sistem operasi.Printah ini bertujuan agar pengguna dapat menggunakan hak akses baca,tulis,dan eksekusi untuk pemilik,grup,ataupun pengguna yang lain.
+4.Perintah chown digunakan untuk mengganti kepemilikan file atau folder.Perintah ini bertujuan agar pengguna dapat mengatur izin akses pemilik dan grup dari dalam file supaya sesuai dengan kebutuhan sistem.
+5.Kernel mempnyai peran sangat penting yaitu sebagai pengatur utama antara perangkat keras dan perangkat lunak.Saat perintah chown dan chmod dikerjakan,kernel akan memproses perintah melewati system call agar memastikan perubahan hak akses pada file dengan aman.
 
 ---
 
@@ -55,7 +59,9 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+-Perintah chmod digunakan untuk mengatur izin akses file yang digunakan,sedangkan perintah chown digunakan untuk mengubah pemilik atau grup dari file.
+-Proses perubahan izin serta kepemilikan yang dikerjakan oleh sistem agar menjaga keamanan dan pengatura pada file.
+-Linux menyediakan berbagai cara yang fleksibel dalam menjalankan hak akses melalui terminal,supaya pengguna lebih mudah dalam menjalankan file dan foldernya.
 
 ---
 
