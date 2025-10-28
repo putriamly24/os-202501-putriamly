@@ -14,30 +14,29 @@ Topik:  Penggunaan Perintah chmod dan chown dalam Mengelola Keamanan File dalam 
 ## Tujuan
 
 Setelah menyelesaikan tugas ini, mahasiswa mampu:
-
-1.Menggunakan perintah `ls`, `pwd`, `cd`, `cat` untuk navigasi file dan direktori.
-2.Menggunakan `chmod` dan `chown` untuk manajemen hak akses file.
-3.Menjelaskan hasil output dari perintah Linux dasar.
-4.Menyusun laporan praktikum dengan struktur yang benar.
-5.Mengunggah dokumentasi hasil ke Git Repository tepat waktu.
+1. Menggunakan perintah `ls`, `pwd`, `cd`, `cat` untuk navigasi file dan direktori.
+2. Menggunakan `chmod` dan `chown` untuk manajemen hak akses file.
+3. Menjelaskan hasil output dari perintah Linux dasar.
+4. Menyusun laporan praktikum dengan struktur yang benar.
+5. Mengunggah dokumentasi hasil ke Git Repository tepat waktu.
 
 
 ---
 
 ## Dasar Teori
-1.Sistem Operasi Linux adalah suatu sistem opeasi berbasis Unix yang memiliki sifat terbuka dan telah banyak digunakan diberbagai proyek atau bidang.Linux menyiapkan lingkungan terminal yang memastikan para pengguna dapat berinteraksi langsung dengan sistem melewati perintah-perintah tertentu.
-2.Hak akses (permission) memiliki fungsi yang dapat membatasi dann mengatur izin akses dalam mengerjakan suatu file atau folder.Pengaturan ini bertujuan untuk menjaga keamanan data pada sistem dan mencegah penyalahgunaan akses oleh pengguna lain.
-3.Perintah `chmod` digunakan untuk mengatur izin akses file pada sistem operasi.Printah ini bertujuan agar pengguna dapat menggunakan hak akses baca,tulis,dan eksekusi untuk pemilik,grup,ataupun pengguna yang lain.
-4.Perintah chown digunakan untuk mengganti kepemilikan file atau folder.Perintah ini bertujuan agar pengguna dapat mengatur izin akses pemilik dan grup dari dalam file supaya sesuai dengan kebutuhan sistem.
-5.Kernel mempnyai peran sangat penting yaitu sebagai pengatur utama antara perangkat keras dan perangkat lunak.Saat perintah `chown` dan `chmod` dikerjakan,kernel akan memproses perintah melewati system call agar memastikan perubahan hak akses pada file dengan aman.
+1. Sistem Operasi Linux adalah suatu sistem opeasi berbasis Unix yang memiliki sifat terbuka dan telah banyak digunakan diberbagai proyek atau bidang.Linux menyiapkan lingkungan terminal yang memastikan para pengguna dapat berinteraksi langsung dengan sistem melewati perintah-perintah tertentu.
+2. Hak akses (permission) memiliki fungsi yang dapat membatasi dann mengatur izin akses dalam mengerjakan suatu file atau folder.Pengaturan ini bertujuan untuk menjaga keamanan data pada sistem dan mencegah penyalahgunaan akses oleh pengguna lain.
+3. Perintah `chmod` digunakan untuk mengatur izin akses file pada sistem operasi.Printah ini bertujuan agar pengguna dapat menggunakan hak akses baca,tulis,dan eksekusi untuk pemilik,grup,ataupun pengguna yang lain.
+4. Perintah chown digunakan untuk mengganti kepemilikan file atau folder.Perintah ini bertujuan agar pengguna dapat mengatur izin akses pemilik dan grup dari dalam file supaya sesuai dengan kebutuhan sistem.
+5. Kernel mempnyai peran sangat penting yaitu sebagai pengatur utama antara perangkat keras dan perangkat lunak.Saat perintah `chown` dan `chmod` dikerjakan,kernel akan memproses perintah melewati system call agar memastikan perubahan hak akses pada file dengan aman.
 
 ---
 
 ## Langkah Praktikum
 1.**Setup Environment**
 
-•Gunakan Linux (Ubuntu/WSL).
-•Pastikan folder kerja berada di dalam direktori repositori Git praktikum:
+- Gunakan Linux (Ubuntu/WSL).
+- Pastikan folder kerja berada di dalam direktori repositori Git praktikum:
 ```
 praktikum/week3-linux-fs-permission/
 ```
@@ -51,8 +50,8 @@ ls -l
 cd /tmp
 ls -a
 ```
-•Jelaskan hasil tiap perintah.
-•Catat direktori aktif, isi folder, dan file tersembunyi (jika ada).
+- Jelaskan hasil tiap perintah.
+- Catat direktori aktif, isi folder, dan file tersembunyi (jika ada).
 
 3.**Eksperimen 2 – Membaca File** 
 Jalankan perintah:
@@ -60,7 +59,7 @@ Jalankan perintah:
 
 cat /etc/passwd | head -n 5
 ```
-•Jelaskan isi file dan struktur barisnya (user, UID, GID, home, shell).
+- Jelaskan isi file dan struktur barisnya (user, UID, GID, home, shell).
 
 4.**Eksperimen 3 – Permission & Ownership** 
 Buat file baru:
@@ -71,8 +70,8 @@ ls -l percobaan.txt
 chmod 600 percobaan.txt
 ls -l percobaan.txt
 ```
-•Analisis perbedaan sebelum dan sesudah chmod.
-•Ubah pemilik file (jika memiliki izin sudo):
+- Analisis perbedaan sebelum dan sesudah chmod.
+- Ubah pemilik file (jika memiliki izin sudo):
 ```bash
 sudo chown root percobaan.txt
 ls -l percobaan.txt
@@ -81,11 +80,11 @@ Catat hasilnya.
 
 5.Eksperimen 4 – Dokumentasi
 
-•Ambil screenshot hasil terminal dan simpan di:
+- Ambil screenshot hasil terminal dan simpan di:
 ```
 praktikum/week3-linux-fs-permission/screenshots/
 ```
-•Tambahkan analisis hasil pada `laporan.md`.
+- Tambahkan analisis hasil pada `laporan.md`.
 
 6.**Commit & Push**
 ```bash
@@ -122,23 +121,26 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Kesimpulan
--Perintah chmod digunakan untuk mengatur izin akses file yang digunakan,sedangkan perintah chown digunakan untuk mengubah pemilik atau grup dari file.
--Proses perubahan izin serta kepemilikan yang dikerjakan oleh sistem agar menjaga keamanan dan pengatura pada file.
--Linux menyediakan berbagai cara yang fleksibel dalam menjalankan hak akses melalui terminal,supaya pengguna lebih mudah dalam menjalankan file dan foldernya.
+1. Perintah chmod digunakan untuk mengatur izin akses file yang digunakan,sedangkan perintah chown digunakan untuk mengubah pemilik atau grup dari file.
+2. Proses perubahan izin serta kepemilikan yang dikerjakan oleh sistem agar menjaga keamanan dan pengatura pada file.
+3. Linux menyediakan berbagai cara yang fleksibel dalam menjalankan hak akses melalui terminal,supaya pengguna lebih     mudah dalam menjalankan file dan foldernya.
 
 ---
 
 ## Quiz
-1. Pertanyaan: Apa fungsi dari perintah chmod?
-   Jawaban  : Perintah chmod berfungsi untuk mengatur atau mengubah hak akses pada file ataupun folder didalam sistem operasi Linux atau 
+1.  Apa fungsi dari perintah chmod?
+   **Jawaban :**
+Perintah chmod berfungsi untuk mengatur atau mengubah hak akses pada file ataupun folder didalam sistem operasi Linux atau 
               Unix.Lewat perintah ini,para pengguna dapat menentukan siapa saja yang dapat diperbolehkan membaca,mengedit,atau 
               mengerjakan file tersebut. 
-2. Pertanyaan: Apa arti dari kode permission rwxr-xr--?
-   Jawaban   : Kode permission  rwxr-xr-- artinya pemilik file mempunyai hak penuh untuk membaca,menulis,dan menjalankan file,sedangkan 
+3. Apa arti dari kode permission `rwxr-xr--`?
+   **Jawaban:**
+   Kode permission  ``rwxr-xr--`` artinya pemilik file mempunyai hak penuh untuk membaca,menulis,dan menjalankan file,sedangkan 
                grup hanya dapat membaca dan menjalankan,dan pengguna lain hanya dapat memiliki izin untuk membaca saja. 
-3. Pertanyaan: Jelaskan perbedaan antara chown dan chmod! 
-   Jawaban   : Perintah chown memiliki fungsi untuk mengganti siapa pemilik atau grup dari file atau folder,sedangkan perintah chmod 
-               berfungsi untuk izin hak akses,yaitu siapa saja yang boleh membaca,menulis,atau menjalankan file.Jdipada intinya chown 
+5. Jelaskan perbedaan antara chown dan chmod! 
+   **Jawaban:**
+   Perintah ``chown`` memiliki fungsi untuk mengganti siapa pemilik atau grup dari file atau folder,sedangkan perintah ``chmod``
+               berfungsi untuk izin hak akses,yaitu siapa saja yang boleh membaca,menulis,atau menjalankan file.Jdipada intinya ``chown``
                mengatur kepemilikan terhadap file,sedangkan chmod mengtur hak akses terhadap file itu.  
 
 ---
