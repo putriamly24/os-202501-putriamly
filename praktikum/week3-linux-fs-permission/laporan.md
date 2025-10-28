@@ -15,8 +15,8 @@ Topik:  Penggunaan Perintah chmod dan chown dalam Mengelola Keamanan File dalam 
 
 Setelah menyelesaikan tugas ini, mahasiswa mampu:
 
-1.Menggunakan perintah ls, pwd, cd, cat untuk navigasi file dan direktori.
-2.Menggunakan chmod dan chown untuk manajemen hak akses file.
+1.Menggunakan perintah `ls`, `pwd`, `cd`, `cat` untuk navigasi file dan direktori.
+2.Menggunakan `chmod` dan `chown` untuk manajemen hak akses file.
 3.Menjelaskan hasil output dari perintah Linux dasar.
 4.Menyusun laporan praktikum dengan struktur yang benar.
 5.Mengunggah dokumentasi hasil ke Git Repository tepat waktu.
@@ -27,17 +27,74 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 ## Dasar Teori
 1.Sistem Operasi Linux adalah suatu sistem opeasi berbasis Unix yang memiliki sifat terbuka dan telah banyak digunakan diberbagai proyek atau bidang.Linux menyiapkan lingkungan terminal yang memastikan para pengguna dapat berinteraksi langsung dengan sistem melewati perintah-perintah tertentu.
 2.Hak akses (permission) memiliki fungsi yang dapat membatasi dann mengatur izin akses dalam mengerjakan suatu file atau folder.Pengaturan ini bertujuan untuk menjaga keamanan data pada sistem dan mencegah penyalahgunaan akses oleh pengguna lain.
-3.Perintah chmod digunakan untuk mengatur izin akses file pada sistem operasi.Printah ini bertujuan agar pengguna dapat menggunakan hak akses baca,tulis,dan eksekusi untuk pemilik,grup,ataupun pengguna yang lain.
+3.Perintah `chmod` digunakan untuk mengatur izin akses file pada sistem operasi.Printah ini bertujuan agar pengguna dapat menggunakan hak akses baca,tulis,dan eksekusi untuk pemilik,grup,ataupun pengguna yang lain.
 4.Perintah chown digunakan untuk mengganti kepemilikan file atau folder.Perintah ini bertujuan agar pengguna dapat mengatur izin akses pemilik dan grup dari dalam file supaya sesuai dengan kebutuhan sistem.
-5.Kernel mempnyai peran sangat penting yaitu sebagai pengatur utama antara perangkat keras dan perangkat lunak.Saat perintah chown dan chmod dikerjakan,kernel akan memproses perintah melewati system call agar memastikan perubahan hak akses pada file dengan aman.
+5.Kernel mempnyai peran sangat penting yaitu sebagai pengatur utama antara perangkat keras dan perangkat lunak.Saat perintah `chown` dan `chmod` dikerjakan,kernel akan memproses perintah melewati system call agar memastikan perubahan hak akses pada file dengan aman.
 
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1.**Setup Environment**
+
+•Gunakan Linux (Ubuntu/WSL).
+•Pastikan folder kerja berada di dalam direktori repositori Git praktikum:
+```
+praktikum/week3-linux-fs-permission/
+```
+
+2.**Eksperimen 1 – Navigasi Sistem File**
+Jalankan perintah:
+```bash
+
+pwd
+ls -l
+cd /tmp
+ls -a
+```
+•Jelaskan hasil tiap perintah.
+•Catat direktori aktif, isi folder, dan file tersembunyi (jika ada).
+
+3.**Eksperimen 2 – Membaca File** 
+Jalankan perintah:
+```bash
+
+cat /etc/passwd | head -n 5
+```
+•Jelaskan isi file dan struktur barisnya (user, UID, GID, home, shell).
+
+4.**Eksperimen 3 – Permission & Ownership** 
+Buat file baru:
+```bash
+
+echo "Hello <NAME><NIM>" > percobaan.txt
+ls -l percobaan.txt
+chmod 600 percobaan.txt
+ls -l percobaan.txt
+```
+•Analisis perbedaan sebelum dan sesudah chmod.
+•Ubah pemilik file (jika memiliki izin sudo):
+```bash
+sudo chown root percobaan.txt
+ls -l percobaan.txt
+```
+Catat hasilnya.
+
+5.Eksperimen 4 – Dokumentasi
+
+•Ambil screenshot hasil terminal dan simpan di:
+```
+praktikum/week3-linux-fs-permission/screenshots/
+```
+•Tambahkan analisis hasil pada `laporan.md`.
+
+6.**Commit & Push**
+```bash
+
+git add .
+git commit -m "Minggu 3 - Linux File System & Permission"
+git push origin main
+```
+
 
 ---
 
