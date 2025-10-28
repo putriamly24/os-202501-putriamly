@@ -150,6 +150,12 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Tugas
+Jelaska fungsi tiap perintah dan arti kolom permission (``rwxr--xr--``)
+| No | Perintah | Fungsi | Hasil Observasi | 
+|----|---------|--------|------------------|
+| 1 | ``pwd`` | Menampilkan lokasi folder (direktori) yang aktif tempat pengguna sedang bekerja di terminal. | Menunjukan direktori bekerja secara aktif di folder ``/home/putri/Documents.`` |
+| 2 | 
+
 
 
 ## Quiz
