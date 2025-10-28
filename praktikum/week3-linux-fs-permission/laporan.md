@@ -12,9 +12,15 @@ Topik:  Penggunaan Perintah chmod dan chown dalam Mengelola Keamanan File dalam 
 ---
 
 ## Tujuan
--Mahasiswa mampu menjelaskan fungsi dan cara kerja perintah chmod untuk mengatur izin akses file.
--Mahasiswa mampu menjelaskan fungsi dan cara kerja perintah chown untuk mengubah kepemilikan file.
--Dapat membedakan cara pengaturan izin file antara sistem operasi Linux dan Windows.
+
+Setelah menyelesaikan tugas ini, mahasiswa mampu:
+
+1.Menggunakan perintah ls, pwd, cd, cat untuk navigasi file dan direktori.
+2.Menggunakan chmod dan chown untuk manajemen hak akses file.
+3.Menjelaskan hasil output dari perintah Linux dasar.
+4.Menyusun laporan praktikum dengan struktur yang benar.
+5.Mengunggah dokumentasi hasil ke Git Repository tepat waktu.
+
 
 ---
 
