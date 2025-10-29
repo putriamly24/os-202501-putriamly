@@ -195,18 +195,7 @@ Kesimpulan Eksperimen 3
 2. Perintah chmod digunakan untuk mengubah izin akses file, sedangkan chown digunakan untuk mengubah pemilik file.
 3. Setelah diubah menjadi 600, file menjadi lebih aman karena hanya pemilik yang bisa mengaksesnya.
 4. Mengubah kepemilikan file ke root menunjukkan konsep hak istimewa (privilege) di sistem Linux.
-
-
-
-
-
-
-
- 
-
-
- 
-
+5. 
 ---
 
 ## Analisis
@@ -236,13 +225,67 @@ Kesimpulan Eksperimen 3
 ---
 
 ## Tugas
-Jelaska fungsi tiap perintah dan arti kolom permission (``rwxr--xr--``)
-| No | Perintah | Fungsi | Hasil Observasi | 
-|----|---------|--------|------------------|
-| 1 | ``pwd`` | Menampilkan lokasi folder (direktori) yang aktif tempat pengguna sedang bekerja di terminal. | Menunjukan direktori bekerja secara aktif di folder ``/home/putri/Documents.`` |
-| 2 | 
+1. **Tujuan**
+- Mengenal perintah dasar sistem file Linux.
+- Memahami arti kolom permission dan penggunaannya.
+- Mengetahui peran chmod dan chown dalam menjaga keamanan file.
+2. **Tabel Observasi**   
 
+| No |	Perintah |	Hasil / Output (Ringkasan) |	Keterangan |
+|---|------------|------------------------------|------------|
+| 1 |	``cd /tmp`` |	(tidak ada output) |	Berpindah ke direktori ``/tmp``. |
+| 2 |	``ls -a`` |	``. .. x11-unix systemd-private-* snap-private-tmp`` |	Menampilkan seluruh isi direktori, termasuk file atau folder tersembunyi. |
+| 3 |	``cat /etc/passwd | head -n 5`` |	Menampilkan 5 baris pertama dari daftar akun sistem (root, daemon, bin, sys, sync). |	Menampilkan isi file ``/etc/passwd``, yang berisi informasi user sistem. |
+| 4 |	``echo "Hello <PUTRI><25202924>" > percobaan.txt`` | 	Membuat file ``percobaan.txt`` dengan isi teks tersebut. |	``echo`` menuliskan teks ke dalam file. |
+| 5 |	``ls -l percobaan.txt`` |	``-rw-rw-r-- 1 jimin jimin ... percobaan.txt`` |	Menampilkan informasi file beserta hak akses (permission), pemilik, dan grup. |
+| 6 |	``chmod 600 percobaan.txt`` |	(tidak ada output) |	Mengubah hak akses file menjadi hanya pemilik yang bisa membaca & menulis. |
+| 7 |	``ls -l percobaan.txt`` |	``-rw------- 1 jimin jimin ... percobaan.txt`` |	Setelah ``chmod``, permission berubah sesuai pengaturan baru. |
+3. **Penjelasan Fungsi Tiap Perintah**
+Perintah	Fungsi
 
+| ``cd`` |	Pindah direktori kerja saat ini. |
+|--------|-----------------------------------|
+| ``ls -a`` |	Menampilkan semua file, termasuk yang tersembunyi (``. dan ..``). |
+| ``cat`` |	Menampilkan isi file teks ke terminal. |
+| ``head -n 5`` |	Menampilkan 5 baris pertama dari sebuah file. |
+| ``echo "teks" > nama_file`` |	Menulis teks ke dalam file (membuat file baru jika belum ada). |
+| ``ls -l`` |	Menampilkan daftar file dengan detail: permission, pemilik, grup, ukuran, dan tanggal. | 
+| ``chmod`` |	Mengubah permission (hak akses) file atau folder. |
+| ``chown`` |	Mengubah pemilik (owner) dan grup file (tidak digunakan di percobaan ini, tapi dibahas di analisis). |
+
+4. **Arti Kolom Permission** (contoh: ``-rw-r--r--``)
+
+Struktur permission:
+``[tipe][owner][group][others]``
+
+| Bagian |	Keterangan |
+|--------|-------------|
+| ``-`` |	Jenis file (``-`` = file biasa, ``d`` = direktori)
+| ``rw-`` |	Hak akses pemilik: baca (``r``), tulis (``w``), tidak eksekusi (``-``). |
+| `r--` |	Hak akses grup: hanya baca. |
+| ``r--`` |	Hak akses pengguna lain: hanya baca. |
+
+Contoh hasil setelah ``chmod 600 percobaan.txt:``
+-rw-------
+Artinya hanya pemilik (jimin) yang dapat membaca dan menulis file; grup dan user lain tidak memiliki akses.
+
+5.**Analisis Keamanan**
+**Peran** ``chmod``
+- Mengatur hak akses (read, write, execute) untuk pemilik, grup, dan pengguna lain.
+- Melindungi file dari modifikasi tidak sah.
+
+**Peran** ``chown``
+- Mengubah pemilik (owner) dan grup file.
+- Berguna untuk membatasi file tertentu agar hanya bisa diakses oleh pengguna tertentu.
+- Contoh:
+  
+``sudo chown root:admin config.cfg``
+
+File hanya bisa dikelola oleh user ``root`` dan grup ``admin``.
+**Kesimpulan Keamanan88
+- ``chmod`` dan chown bekerja sama untuk menjaga integritas dan kerahasiaan file.
+- Tanpa pengaturan izin yang tepat, pengguna lain bisa mengubah, menghapus, atau membaca data sensitif.
+- Pengaturan izin yang tepat adalah bagian penting dari keamanan sistem Linux multi-user.
 
 ## Quiz
 1.  Apa fungsi dari perintah chmod?
@@ -263,9 +306,8 @@ Jelaska fungsi tiap perintah dan arti kolom permission (``rwxr--xr--``)
 ---
 
 ## Refleksi Diri
-Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+1. Bagian yang paling menantang adalah melakukan eksperimen sistem file di Linux, karena laptop saya kurang mendukung dan sering berjalan lambat saat menjalankan perintah.
+2. Untuk mengatasinya, saya kadang meminjam komputer di kampus agar bisa menjalankan perintah dan berlatih kembali.
 
 ---
 
