@@ -120,6 +120,16 @@ ls -l percobaan.txt
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](<screenshots/eksperimen.putri.png>)
+### Eksperimen 1
+
+- **Perintah 1 :**
+   | Perintah | output | Keterangan |
+  | :--------| :-----| :--------|
+  | ``pwd`` | ``/home/jimin`` | `pwd` (print working directory) Menampilkan lokasi direktori kerja saat difolder,artinya saat sedang berada di folder ``/home/jimin``atau direktori milik`jimin` |
+- **Perintah 2 :**
+
+  Perintah : `ls -l`
+  output : 
 
 ---
 
