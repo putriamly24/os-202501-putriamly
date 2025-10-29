@@ -132,7 +132,53 @@ Sertakan screenshot hasil percobaan atau diagram:
 ```bash
   -rw-r--r--  1  jimin  jimin  4096  Oct 25  13:32  percobaan.txt
 ```
+- **Perintah 3 :**
+   Perintah : `cd` /tmp
 
+```bash
+
+ ` cd` /tmp
+```
+Keterangan : Perintah `cd` (change directory)digunakan untuk berpindah direktori kerja,sedangkan direktori `/tmp` yaitu folder sementara (temporary directory) yang disediakan oleh sistem Linux untuk menyimpan file sementara.
+Analisis : Ketika berpindah ke folder `/tmp` ,tempat umum buat mengerjakan eksperimen file tanpa mengganggu sistem utama.
+- **Perintah 4 :**
+  ```bash
+  `ls -a`
+  ```
+  Keterangan :
+  - Perintah `ls` digunakan untuk melihat isi direktori.
+  - Opsi `-a` yaitu menunjukan semua file termasuk yang tersembunyi.
+  - File maupun folder yang diawali tanda titik (.) adalah file tersembunyi.
+
+## Eksperimen 2
+
+```bash
+  cat /etc/passwd | head -n 5
+```
+ Keterangan : 
+1. `cat` (concatenate) digunakan untuk menampilkan isi file ke layar,dalam hal ini file file yang dibaca adalah `/etc/passwd` .
+2. `|` (pipa) digunakan untuk mengarahkan output dari satu perintah menjadi input bagi perintah lain,dari hasilnya menjadi `cat /etc/passwd` dilanjutkan ke perintah selanjutnya ( `head -n 5` )
+3. `head -n 5` menampilkan 5 baris pertama dari hasil input,yang bertujuan untuk tampilan tidak terlalu panjang,karena file `/etc/passwd` dapat berisi puluhan baris.
+
+   Analisis Struktur Tiap Baris
+   
+ | No | Kolom               | Contoh      | Keterangan                                                               |
+| -- | ------------------- | ----------- | ------------------------------------------------------------------------ |
+| 1  | **Username**        | `root`      | Nama pengguna (`jimin`)                                               |
+| 2  | **Password**        | `x`         | Menandakan password disimpan di file lain (`/etc/shadow`) untuk keamanan |
+| 3  | **UID (User ID)**   | `0`         | Nomor unik identitas pengguna. UID 0 = root                              |
+| 4  | **GID (Group ID)**  | `0`         | Nomor unik identitas grup utama pengguna                                 |
+| 5  | **Comment / GECOS** | `root`      | Biasanya berisi nama lengkap pengguna atau deskripsi                     |
+| 6  | **Home Directory**  | `/root`     | Folder utama pengguna                                                    |
+| 7  | **Shell Login**     | `/bin/bash` | Program shell yang digunakan saat login (misal Bash atau nologin)        |
+
+  Kesimpulan : Dari hasil eksperimen perintah `cat /etc/passwd | head -n 5`,didapatkan lima baris pertama dari file `/etc/passwd`yang berisi data akun pengguna dari dalam sistem.Setiap baris mempunyai struktur `username:x:UID:GID:komentar:home:shell`.Melewati percobaan ini dapat dipahami bahwa file `/etc/passwd` bertujuan untuk menyimpan identitas pengguna dan konfigurasi login pada sistem Linux.
+  
+   
+
+            
+
+  
   
 
 ---
