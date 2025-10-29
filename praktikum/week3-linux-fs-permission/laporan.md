@@ -127,9 +127,13 @@ Sertakan screenshot hasil percobaan atau diagram:
   | :--------| :-----| :--------|
   | ``pwd`` | ``/home/jimin`` | `pwd` (print working directory) Menampilkan lokasi direktori kerja saat difolder,artinya saat sedang berada di folder ``/home/jimin``atau direktori milik`jimin` |
 - **Perintah 2 :**
-
   Perintah : `ls -l`
-  output : 
+
+```bash
+  -rw-r--r--  1  jimin  jimin  4096  Oct 25  13:32  percobaan.txt
+```
+
+  
 
 ---
 
