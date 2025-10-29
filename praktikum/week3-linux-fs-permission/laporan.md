@@ -120,7 +120,7 @@ ls -l percobaan.txt
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](<screenshots/eksperimen.putri.png>)
-### Eksperimen 1
+### Eksperimen 1 - Navigasi Sistem File
 
 - **Perintah 1 :**
    | Perintah | output | Keterangan |
@@ -150,7 +150,7 @@ Analisis : Ketika berpindah ke folder `/tmp` ,tempat umum buat mengerjakan ekspe
   - Opsi `-a` yaitu menunjukan semua file termasuk yang tersembunyi.
   - File maupun folder yang diawali tanda titik (.) adalah file tersembunyi.
 
-## Eksperimen 2
+## Eksperimen 2-Membaca File
 
 ```bash
   cat /etc/passwd | head -n 5
@@ -172,14 +172,40 @@ Analisis : Ketika berpindah ke folder `/tmp` ,tempat umum buat mengerjakan ekspe
 | 6  | **Home Directory**  | `/root`     | Folder utama pengguna                                                    |
 | 7  | **Shell Login**     | `/bin/bash` | Program shell yang digunakan saat login (misal Bash atau nologin)        |
 
-  Kesimpulan : Dari hasil eksperimen perintah `cat /etc/passwd | head -n 5`,didapatkan lima baris pertama dari file `/etc/passwd`yang berisi data akun pengguna dari dalam sistem.Setiap baris mempunyai struktur `username:x:UID:GID:komentar:home:shell`.Melewati percobaan ini dapat dipahami bahwa file `/etc/passwd` bertujuan untuk menyimpan identitas pengguna dan konfigurasi login pada sistem Linux.
-  
+ Kesimpulan : Dari hasil eksperimen perintah `cat /etc/passwd | head -n 5`,didapatkan lima baris pertama dari file `/etc/passwd`yang berisi data akun pengguna dari dalam sistem.Setiap baris mempunyai struktur `username:x:UID:GID:komentar:home:shell`.Melewati percobaan ini dapat dipahami bahwa file `/etc/passwd` bertujuan untuk menyimpan identitas pengguna dan konfigurasi login pada sistem Linux.
+
+ ## Eksperimen 3-Permission & Ownership
+ **Langkah dan hasil:**
+| No | Langkah |	Perintah	Hasil / Output |	Keterangan |
+|----|--------|---------------------------|-------------|
+| 1 |	echo ``"Hello PUTRI<25202924>" > percobaan.txt``` |	Membuat file percobaan.txt berisi teks tersebut |	Membuat file baru dan menulis isi di dalamnya. |
+| 2 |	``ls -l percobaan.txt | Awalnya: -rw-r--r-- 1 jimin jimin ...`` |	Pemilik: bisa baca & tulis (``rw-``), Grup & lainnya hanya bisa baca (``r--``). |
+| 3 |	``chmod 600 percobaan.txt`` |	Mengubah izin menjadi ``-rw-------`` |	Hanya pemilik yang bisa baca & tulis, pengguna lain tidak bisa. |
+| 4 |	``ls -l percobaan.txt`` |	Setelah ``chmod: -rw------- 1 jimin jimin ...`` |	Menunjukkan perubahan permission setelah diperketat. |
+| 5 |	sudo ``chown root percobaan.txt`` (opsional)	| Menjadi ``-rw------- 1 root jimin ...`` |	Pemilik file berubah dari jimin ke root. |
+
+   Format permission file di Linux:
    
+ - **r (read)**= izin membaca file
+ - **w (write)**= izin mengubah isi file
+ - **x (execute)= izin menjalankan file
 
-            
+Kesimpulan Eksperimen 3
+1. Linux menggunakan permission system untuk mengatur siapa yang bisa membaca, menulis, dan mengeksekusi file.
+2. Perintah chmod digunakan untuk mengubah izin akses file, sedangkan chown digunakan untuk mengubah pemilik file.
+3. Setelah diubah menjadi 600, file menjadi lebih aman karena hanya pemilik yang bisa mengaksesnya.
+4. Mengubah kepemilikan file ke root menunjukkan konsep hak istimewa (privilege) di sistem Linux.
 
-  
-  
+
+
+
+
+
+
+ 
+
+
+ 
 
 ---
 
