@@ -7,7 +7,7 @@ Topik:  Penggunaan Perintah chmod dan chown dalam Mengelola Keamanan File dalam 
 ## Identitas
 - **Nama**  : Putri Amaliya Rahmadani
 - **NIM**   : 250202924
-- **Kelas** : 1 IKRA
+- **Kelas** : 1 IKRA 
 
 ---
 
