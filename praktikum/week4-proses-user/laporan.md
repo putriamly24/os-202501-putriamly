@@ -116,6 +116,36 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 
 ---
 
+## Tugas & Quiz
+## Tugas
+1. Dokumentasi hasil perintah dan fungsi
+   | No | Perintah yang Dieksekusi | Output yang Terlihat | Fungsi Perintah |
+   |----|--------------------------|----------------------|------------------|
+   | 1 | `sudo adduser praktikan` | Menambahkan pengguna praktikan dengan UID/GID 1000 dan group utama di `praktikan`.Meminta lebih detail info pengguna dan kata sandi baru. | Digunakan untuk menambah akun pengguna baru ke dalam sistem Linux, termasuk memubuat direktori `home` dan `shell` secara defalut. |
+   | 2 | `grup praktikan {root}` | Tidak tereksekusi,masih ada terjadi kesalahan ketik pada gambar. | Maksudnya yaitu groups `root`: Menampilkan daftar grup yang menunjukan pengguna `root` menjadi anggotanya. |
+   | 3 | `sudo adduser praktikan users` | Menambahkan pengguna `praktikan` ke grup yang ada tambahan users. | Digunakan untuk menambahkan pengguna yang sudah atau lebih grup tambahan. |
+   | 4 | ` ps aux` | `head -10` | Menampilkan daftar 10 dari proses teratas (termasuk header) yang sedang bekerja di sistem, dengan detail seperti PID,%CPU,%MEM%, dan COMMAND. |
+   | 5 | `top` | Menampilkan monitor pada saat proses interaktif waktu nyata (real-time) yang diperbarui secara bertahap, yang menunjukan pengguna CPU, Memori (RAM), dan daftar proses yang sedang bekerja di sistem.| Memantau kinerja pada sistem dan proses secara dinamis dan detail. |
+   | 6 | `sleep 1000 &` | Pada proses `sleep` dieksekusi di background dengan PID 729, dan akan menunggu selama kurang lebih 1000 detik. | Menangguhkan eksekusi selama waktu yang sudah ditentukan.Tanda dan proses menjalaknkannya di background. |
+   | 7 | `ps aux` | `grep sleep` | Menemukan proses `sleep` yang sedang bekerja (PID 729) dan proses `grep` itu sendiri.|
+   | 8 | `kill <PID>` | Proses yang gagal karena `kill <PID>` pada gambar tidak tereksekusi dengan PID. | Mengirimkan sinyal secara default TERM ke proses dengan PID tertentu untuk mengkhirinya secara normal. |
+   | 9 | `pstree -p` | `head -20` | Menampilkan hierarki prosses(PID yang disertakan) ke dalam format diagram pohon, dibatasi 20 baris. |
+
+ 2.  Diagram pohon hierarki proses (`pstree`).
+ 3.  Hubungan user management dan keamanan sistem Linux.
+     Manajemen pengguna adalah fondasi yang utama pada keamanan di Linux.
+     1. Prinsip hak akses paling kecil:
+        - Setiap pengguna (UID) dan grup (GID) hanya akan diberi izin yang benar-benar dibutuhkan (baca/tulis/eksekusi).
+        - Prinsip ini membatasi potensi terjadinya kerusakan, karena pengguna biasa (non-root) tidak akan bisa mengubah atau merusak file pada sistem yang krusial.
+      2. Pemisahan kewenangan (kontrol root)
+         - Memisahkan akun Superuser (`root`) yang tidak terbatas dengan pengguna biasa yang akan dibatasi.
+         - Pengguna `sudo` memastikan pengguna biasa hanya meminjam izin `root` sementara untuk tugas yang spesifik, sehingga sistem tidak akan rentan karena kesalahan-kesalahan ceroboh yang dilakukan oleh pengguna biasa.
+      3. Akuntabilitas
+         - Setiap tindakan pada proses akan dicatat yang berdasarkan akun pengguna yang login.
+         - Proses ini akan memudahkan identifikasi siapa yang bertanggung jawab atau penyebab error pada saat terjadi masalah keamanan atau anomali di sistem.
+      Kesimpulan yaitu untuk mengontrol pengguna adalah cara paling efektif untuk mengontrol pada saat terjanya resiko.Dengan batasan yang jelas,sistem Linux bisa mencegah penyalahgunaan dan membatasi dampak serangan atau kesalahan pada sistem Linux yang berjalan.    
+   
+   
 ## Quiz
 1. Apa fungsi dari proses `init` atau `systemd` dalam sistem Linux?  
    Jawaban: Proses `init` atau `systemd` adalah proses yang pertama dikerjakan oleh kernel pada saat komputer dengan sistem Linux dinyalakan.Peran utamanya yaitu mengatur dan mengerjakan seluruh sistem agar dapat berfungsi dengan baik dan normal.  
