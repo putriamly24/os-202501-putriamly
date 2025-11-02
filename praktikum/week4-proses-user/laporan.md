@@ -107,6 +107,17 @@ Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](<screenshots/eksperimenputri3>)
 
 ---
+## Hasil Ekperimen 
+- Ekperimen 1 - Identitas User
+  Bertujuan untuk melihat dan mengetahui identitas user yang sedang aktif dan dapat membuat user baru.
+  Perintah-perintah yang dijalankan:
+  - `whoami`
+  - `id`
+  - `groups`
+  - `sudo adduser praktikan`
+  - `sudo passwd praktikan`
+  Untuk Output dari `whoami` dapat menunjukan kalau `root` - berarti terminal yang sedang bekerja sebagai user `root`.Pada saat `sudo adduser praktikan` sistem akan menampilkan:
+     - 
 
 ## Analisis
 1. Makna hasil percobaan.
