@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu Ke 4
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik: Pemahaman Pross dan Kinerja Sistem Operasi Linux
 
 ---
 
@@ -22,11 +22,15 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+1. Kernel merupakan inti dari sitem operasi yang memilik tugas untuk mengatur seluruh sumberdaya pada komputer, termasuk proses,memori]], dan juga perangkat keras.
+2. Proses ini merupakan salah satu progam yang dikerjakan pada sistem; setiap proses mempunyai PID (Process ID) dan bisa memiliki hubungan induk-anak (parent-child).
+3. System call merupakan mekanisme yang dapat digunakan pada progam di user space untuk meminta layanan dari kernel, seperti membuat proses (`fork()`),mengerjakan progam (`exec()`), ataupun dapat menghentikan proses(`kill()`).
+4. Manajemen proses dapat mencakup pembuatan, penjadwalan, pemantauan, dan menghentikan proses, yang semua sistemnya diatur oleh kernel agar sistem berjalan secara efisen.
+5. Lingkungan Linux sudah menyediakan berbagai perintah seperti `ps,top,pstree`, dan `kill` untuk melihat dan mengontrol semua proses yang bekerja di sistm.
 
 ---
 
-## Langkah Praktikum
+## Langkah Praktikum`
 1. **Setup Environment**
   - Gunakan Linux (Ubuntu/WSL).
   - Pastikan Anda sudah login sebagai user non-root.
@@ -105,14 +109,73 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
-
+1. Makna hasil percobaan.
+   - Pembuatan user baru.
+     Saat menjalankan perintah:
+     ```bash
+     sudo adduser praktikan
+     ```
+     Perintah tersebut menambahkan user baru bernama `praktikan`, dilengkapi dengan:
+     - Home directory ``home/praktikan`.
+     - Group utama `praktikan`
+     - Password baru.
+     - Informasi tambahan yang menunjukan cara Linux mengelola user dan group secara mandiri didalam sistem,seperti nama, nomor kamar, telepon, dll.
+    - Menjalankan proses dan melihat proses.
+      Pada saat menjalankan perintah:
+      ```bash
+      sleep 1000 &
+      ```
+      Proses `sleep` berjalan melewati background menggunakan PID (Process ID) = 729.Tanda beserta makna proses berjalan di background, tidak akan menghalangi terminal.
+      Selanjutnya memeriksa proses:
+      ```bash
+      ps aux | grep sleep
+      ```
+      Pada perintah ini menampilkan semua proses dan menutupi yang mengandung kata `sleep`.Terlihat proses `sleep 1000`  beserta proses `grep` sendiri.
+    - Eksperimen membunuh proses.
+      Perintah yang menulis:
+      ```bash
+      kill <PID>
+      ```
+      Pada perintah ini terjadi eror syntax karena pengguna tidak mengganti `<PID>` dengan angka yang sesungguhnya, seperti `kill 729`.Apabila dilakukan, `kill 729` akan menghentikan proses `sleep 1000`.
+    - Menampilkan pohon proses.
+      Menjalankan perintah:
+      ```bash
+      pstree -p | head -20
+      ```
+      Perintah ini akan menampilkan hierarki proses yang lengkap dengan PID.Menunjukan hubungan parent-child process, yang berarti `systemd` adalah proses utama (PID 1), dan semua proses lain adalah turunannya.
+    - Melihat aktivitas CPU dan memori.
+      Menjalankan perintah:
+      ```bash
+      top
+      ```
+      Perintah ini akan menampilkan proses yang sedang bekerja, beberapa CPU dan RAM yang digunakan, siapa pemilik user-nya, dan status dari prosesnya.Misalnya proses `top` itu sendiri yang terlihat aktif `(%CPU 10.0)`.
+      Makna dari keseluruhan:
+      - Menunjukan bahwa kernel mengelola proses: setiap proses mempunyai PID, parent, dan child.
+      - Dapat mengetahui kalu sistem dapat memantau dan mengendalikan proses menggunakan `ps`, `top`,  `pstree`, dan `kill`.
+      - Menampilkan Linux mendukung multi-user dan multitasking dengan cara bersamaan.
+  2. Hubungan hasill dengan teori(Kernel, System Call, dan Arsitektur OS)
+     | No | Komponen Teori | Hungungan dengan Hasil Percobaan |
+     |----|----------------|----------------------------------|
+     | 1 | Kernel  | Kernel merupakan inti dari OS yang mempunyai tugas untuk mengatur proses, memori, I/O, dan manajemen user.Pada saat menjalankan perintah `sleep 1000`, kernel membuat Process Control Book baru pada memori dan mencatat didalam tabel proses. |
+     | 2 | System Call | Pada saat menjalankan perintah ``sleep``, ``adduser``, dan ``kill``, perintah tersebut akan memanggil system call,seperti ``fork()``, `exec()`, `exit()`, dan `kill`.Misalnya:`sleep 1000`` - system call ``fork()`  akan membuat proses yang baru -  `exec()` dan mengganti isi proses menggunakan progam `sleep`. |
+     | 3 | Arsitektur OS | OS dapat dibagi menjadi: User Space dan Kernel Space.Padda perintah yang dijalankan di shell `(bash)` berada di user space,tetapi eksekusinya dikerjakan oleh kernel.Komunikasi ini yang terjadi melalui system call interface. |
+     | 4 | Proses dan Manajemen Proses | Untuk hasil `ps`, `top`, dan `pstree` menunjukan struktur hierarki proses,status (Running, Sleeping, Zombie), dan juga prioritas. Proses ini dapat membuktikan fungsi kernel dalam process scheduling dan resource management. |
+3. Perbedaan hasil di lingkungan OS berbeda (Linux vs Windows).
+   | No | Aspek | Linux | Windows |
+   |---|--------|-------|---------|
+   | 1 | Kernel dan arsitektur | Semua layanan utama dikerjakan di kernel space. | Hybrid kernel (gabungan dari microkernel dan monolithic).
+   | 2 | Manajemen user dan grup | Proses ini menggunakan sistem user dan group yang berbasis file `etc/passwd,/etc/group`. | Menggunakan sistem akun yang berbasis registry dan domain (Active Directory). |
+   | 3 | Perintah proses | `ps,top,pstree,kill,nice,renice`. | `tasklist,taskkill,taskmgr,wmic,process`. |
+   | 4 | Tampilan proses | Text-based pada terminal, akan mudah diakses kalau melewati command line. | GUI-based di Task Manager, CLI opsional. |
+   | 5 | Hierarki proses(parent-child) | Proses ini akan jelas terlihat lewat `ptree,systemd` yaitu parent utama. | Tidak akan selalu terlihat langsung; proses akan berdiri sendiri dalam GUI Task Manager. |
+   | 6 | System call interface | POSIX standard | Win32 API (khusus Windows environment. |
+   | 7 | Stabilitas dan kontrol | Administrator (`root`) memiliki kendali penuh pada sistem. | Administrator mempunyai kontrol yang lebih terbatas menggunakan UAC. |
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+1. Sistem Linux dapat mengerjakan lebih banyak proses sekaligus dengan menggunakan struktur induk dan anak proses yang dapat diatur menggunakan nomor identitas pada proses (PID).
+2. Kernel memiliki fungsi yang mengatur jalannya pada setiap proses di sistem,mulai dari pada saat embuat perangkat,menjalankan, sampai menghentikan proses dengan melalui mekanisme system call.
+3. Linux dapat memberikan kebebasan dan kendali secara penuh untuk para pengguna yang memantau serta mengelola proses dengan menggunakan perintah, seperti `ps,top,pstree`, dan `kill`.
 
 ---
 
