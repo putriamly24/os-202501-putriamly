@@ -108,7 +108,7 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ---
 ## Hasil Ekperimen 
-- Ekperimen 1 - Identitas User
+- **Ekperimen 1 - Identitas User**
   Bertujuan untuk melihat dan mengetahui identitas user yang sedang aktif dan dapat membuat user baru.
   Perintah-perintah yang dijalankan:
   - `whoami`
@@ -116,9 +116,53 @@ Sertakan screenshot hasil percobaan atau diagram:
   - `groups`
   - `sudo adduser praktikan`
   - `sudo passwd praktikan`
-  Untuk Output dari `whoami` dapat menunjukan kalau `root` - berarti terminal yang sedang bekerja sebagai user `root`.Pada saat `sudo adduser praktikan` sistem akan menampilkan:
-     - 
+  Untuk Output dari `whoami` dapat menunjukan kalau `root` - berarti terminal yang sedang bekerja sebagai user `root`.Pada saat `sudo 
+  adduser praktikan` sistem akan menampilkan:
+    Adding new user `praktikan`(1000)- user yang baru dibikin menggunakan UID/GID 1000.Home directory dibuat `/home/praktikan`.Setelah itu diminta untuk memasukan pssword dan iformasi pada profil (Full Name, Room Number, dsb) - pada foto diisi,seperti (`putriamly,room2410` phone `1234567`).
+    Pada Proses pembuatan `sudo passwd praktian` berhasil saat mengubah password ( `passwd: password updated successfullly`).
+    Analiis singkatnya yaitu pada saat proses pembuatan user berhasil; Linux akan menambahkan entry user (UID 1000) serta folder home, dan akan menambahkan ke grup users.`whoami/id/groups` sangatt berguna untuk memastikan identitas serta hak akses pada saat menjalankkan eksperimen.
+    Kesimpulan eksperimen 1:
+    User baru praktikan telah berhasil dibikin serta bisa di-login (account yang siap pakai).Sistem dapat mengenali user `root` sebagai pengguna yang menjalankan percobaan.
 
+    ---
+- **Eksperimen 2 - Monitoring Proses**
+  Tujuannya yaitu untuk memantau pada saat proses yang bekerja dan membaca kolom penting (PID, USER, %CPU, %MEM, COMMAND).
+  Perintah yang dikerjakan:
+  ```bash
+  ps aux | head -10
+  top -n 1
+  ```
+  Menghasilkan:
+  `ps aux`menampilkan beberapa dafrat proses disertai kolom: USER, PID, %CPU, %MEM, VSZ,RSS, STAT, START, TIME,COMMAND.
+  Proses ini membuktikan sistem dapat memantau seluruh aktiitas pada proses yang sedang bekerja di latar depan maupun belakang.
+
+  ---
+- **Eksperimen 3 - Kontrol Proses**
+  Pada percobaan ini perintah progam yang menjadi latar belakan:
+  ```bash
+  sleep 1000 &
+  ps aux | grep sleep
+  ```
+  Perinta `sleep 1000 &` mengerjakan proses `sleep` pada background, serta `ps aux`| grep sleep` yang digunakan untuk menampilkan PID-nya.Untuk proses yang berkelanjutan akan dibutuhkan:
+  ```bash
+  kill <PID>
+  ```
+  dan akan diverifikasi kembali menggunakan:
+  ```bash
+  ps aux | grep sleep
+  ```
+  Untuk hasilnya  yaitu setelah proses  diberhentikan, tidak ada lagi proses `sleep` yang masih aktif.Hal ini membuktikan bahwa pada perintah `kill` berfungsi sangat efektif untuk mengontrol dan mengakhiri proses yang sedang bekerja.
+  
+  ---
+- **Eksperimen 4 - Analisis Hierarki Proses**
+  Pada percobaan ini atau yang terakhir menggunakan perintah:
+  ```bash
+  pstree -p | head-20
+  ```
+  Perintah ini akan menampilkan struktur hierarki proses kedalam bentuk pohon, di mana proses induk yang berada di atas dan proses anak berada di bawahnya.Hasilya dapat terlihat `systemd` sebagai proses induk utama (PID 1), dengan proses turunannya yait `bash,sleep`, dan yangg lainnya.Hal ini dapat menunjukan kalau setiap proses pada Linux mempunyai hubungan hierarki yang tersetruktr dariinduk ke anak.
+
+  ---
+     
 ## Analisis
 1. Makna hasil percobaan.
    - Pembuatan user baru.
