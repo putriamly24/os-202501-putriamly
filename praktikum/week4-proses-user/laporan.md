@@ -250,7 +250,7 @@ Sertakan screenshot hasil percobaan atau diagram:
    | 9 | `pstree -p` | `head -20` | Menampilkan hierarki prosses(PID yang disertakan) ke dalam format diagram pohon, dibatasi 20 baris. |
 
  2.  Diagram pohon hierarki proses (`pstree`).
-
+```
      systemd(1)
 ├─ agetty(186)
 ├─ agetty(191)
@@ -280,6 +280,7 @@ Sertakan screenshot hasil percobaan atau diagram:
 ├─ systemd-udevd(97)
 └─ unattended-upgr(202)
     └─ {unattended-upgr}(275)
+```
 
 
     
@@ -320,8 +321,8 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Memahami dan menjalankan perintah Linux,karena saya masih ragu dengan jawaban dan hasil yang saya kerjakan. 
+- Cara mengatasi dengan bertanya kepada teman.  
 
 ---
 
