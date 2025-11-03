@@ -212,7 +212,7 @@ Sertakan screenshot hasil percobaan atau diagram:
      | No | Komponen Teori | Hungungan dengan Hasil Percobaan |
      |----|----------------|----------------------------------|
      | 1 | Kernel  | Kernel merupakan inti dari OS yang mempunyai tugas untuk mengatur proses, memori, I/O, dan manajemen user.Pada saat menjalankan perintah `sleep 1000`, kernel membuat Process Control Book baru pada memori dan mencatat didalam tabel proses. |
-     | 2 | System Call | Pada saat menjalankan perintah ``sleep``, ``adduser``, dan ``kill``, perintah tersebut akan memanggil system call,seperti ``fork()``, `exec()`, `exit()`, dan `kill`.Misalnya:`sleep 1000`` - system call ``fork()`  akan membuat proses yang baru -  `exec()` dan mengganti isi proses menggunakan progam `sleep`. |
+     | 2 | System Call | Pada saat menjalankan perintah ``sleep``, ``adduser``, dan ``kill``, perintah tersebut akan memanggil system call,seperti `fork()`, `exec()`, `exit()`, dan `kill`.Misalnya:`sleep 1000` - system call ``fork()`  akan membuat proses yang baru -  `exec()` dan mengganti isi proses menggunakan progam `sleep`. |
      | 3 | Arsitektur OS | OS dapat dibagi menjadi: User Space dan Kernel Space.Padda perintah yang dijalankan di shell `(bash)` berada di user space,tetapi eksekusinya dikerjakan oleh kernel.Komunikasi ini yang terjadi melalui system call interface. |
      | 4 | Proses dan Manajemen Proses | Untuk hasil `ps`, `top`, dan `pstree` menunjukan struktur hierarki proses,status (Running, Sleeping, Zombie), dan juga prioritas. Proses ini dapat membuktikan fungsi kernel dalam process scheduling dan resource management. |
 3. Perbedaan hasil di lingkungan OS berbeda (Linux vs Windows).
@@ -250,7 +250,40 @@ Sertakan screenshot hasil percobaan atau diagram:
    | 9 | `pstree -p` | `head -20` | Menampilkan hierarki prosses(PID yang disertakan) ke dalam format diagram pohon, dibatasi 20 baris. |
 
  2.  Diagram pohon hierarki proses (`pstree`).
- 3.  Hubungan user management dan keamanan sistem Linux.
+
+     systemd(1)
+├─ agetty(186)
+├─ agetty(191)
+├─ cron(167)
+├─ dbus-daemon(168)
+├─ init-systemd(ub)(2)
+│   └─ SessionLeader(548)
+│       ├─ Relay(553)
+│       │   ├─ head(733)
+│       │   ├─ pstree(732)
+│       │   └─ sleep(729)
+│       ├─ init(7)
+│       │   └─ init(8)
+│       └─ login(314)
+│           └─ bash(381)
+├─ rsyslogd(193)
+│   ├─ rsyslogd(223)
+│   ├─ rsyslogd(224)
+│   └─ rsyslogd(225)
+├─ systemd(358)
+│   └─ (sd-pam)(359)
+├─ systemd-journal(53)
+├─ systemd-logind(181)
+├─ systemd-resolved(160)
+├─ systemd-timesyncd(161)
+│   └─ {systemd-timesyn}(165)
+├─ systemd-udevd(97)
+└─ unattended-upgr(202)
+    └─ {unattended-upgr}(275)
+
+
+    
+ 4.  Hubungan user management dan keamanan sistem Linux.
      Manajemen pengguna adalah fondasi yang utama pada keamanan di Linux.
      1. Prinsip hak akses paling kecil:
         - Setiap pengguna (UID) dan grup (GID) hanya akan diberi izin yang benar-benar dibutuhkan (baca/tulis/eksekusi).
