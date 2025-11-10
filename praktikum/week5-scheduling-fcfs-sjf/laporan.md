@@ -107,19 +107,18 @@ Sertakan screenshot hasil percobaan atau diagram:
   | P4 | 3 | 3 | 21 | 24 | 18 (21-3) | 21 (18+3) |
 
  Penjumlahan rata-rata:
-  - Total WT = 0 + 5 + 12 + 18 = 35
-    Rata-rata pada WT = 35/4 = 8.75
-  - Total TAT = 6 + 13 + 19 + 21 = 59
-    Rata-rata pada TAT = 59/4 = 14.75
-  Gantt chart (sederhana)
-  | P1 | P2     | P3     | P4 |
-  0    6       14       21      24
+ - Total WT = 0 + 5 + 12 + 18 = 35
+   Rata-rata pada WT = 35/4 = 8.75
+ - Total TAT = 6 + 13 + 19 + 21 = 59
+   Rata-rata pada TAT = 59/4 = 14.75
+
 - **Eksperimen 2 - SJF (Shortest Job First)**
   Urutan pada atau yang berdasarkan kondisi arrival dan burst saat pemilihan:
   - Pada t = 0:hanya P1 (burst 6) yang tersedia - jalankan P1.
   - P1 selesai pada t = 6. Proses yang sudah sampai di t = 6:P2 (8), P3 (7), P4 (3).Pilihlah burst yang paling pendek yaitu P4.
   - Setelah P4 selesai (t=9), tersisa P2 (8) dan P3 (7) yaitu pilih yang P3 (7) lalu P2 (8).
   Tabel perhitungan:
+
 | Proses | Arrival | Burst | Start | Finish | Waiting Time = Start - Arrival | Turnaround Time = WT + Burst |
 |--------|---------|-------|-------|--------|--------------------------------|------------------------------|
 | P1 | 0 | 6 | 0 | 6 | 0 (0-0) | 6 (0+6) |
@@ -127,16 +126,18 @@ Sertakan screenshot hasil percobaan atau diagram:
 | P3 | 2 | 7 | 9 | 16 | 7 (9-2) | 14 (7+7) |
 | P2 | 1 | 8 | 16 | 24 | 15 (16-1) | 23 (15+8) |
 
-Penjumlahan dan rata-rata:
-- Total WT = 0 + 3 + 7 + 15 = 25
-  Rata-rata WT = 25 /4 = 6.25
+ Penjumlahan dan rata-rata:
+ - Total WT = 0 + 3 + 7 + 15 = 25
+   Rata-rata WT = 25 /4 = 6.25
 - Total TAT = 6 + 6 + 14 + 23 = 49
-  Rata-rata TAT = 49 / 4 = 12.25
-Gantt chart (sederhana)
-| P1 | P4 | P3     | P2     |
-0    6    9       16       24
+   Rata-rata TAT = 49 / 4 = 12.25
 
 - **Perbandingan**
+  
+  | Algoritma | Rata-rata WT | Rata-rata TAT |
+  |-----------|--------------|---------------|
+  | FCFS | 8.75 | 14.75 |
+  | SJF | 6.25 | 12.25 | 
    
 - **Kesimpulan**
   - SJF lebih efisien karena dapat menghasilkan waktu tunggu dan penyelesaian rata-rata yang lebih kecil.
@@ -174,7 +175,9 @@ Gantt chart (sederhana)
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+1. SJF dapat menunjukan hasil yang lebih efisien, karena dapat menekan rata-rata pada waktu tunggu serta waktu penyelesaian dibandingkan dengan FCFS.
+2. FCFS mempunyai cara kerja yang sederhana serta adil, tatapi dapat membuat proses yang singkat dan menunggu lama jika ada proses besar yang datang lebih awal.
+3. Pada pemilihan algoritma harus disesuaikan bersama kebutuhan sistem - SJF lebih cocok kepada sistem yang fokus pada kecepatan penyelesaian, sedangkan FCFS lebih sesuai pada sistem yang mengutamakan urutan serta keadilan eksekusi.
 
 ---
 
