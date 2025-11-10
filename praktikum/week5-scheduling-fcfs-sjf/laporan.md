@@ -21,7 +21,22 @@ Topik: Penjadwalan CPU - FCFS dan SJF
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+1. Pengertian Penjadwalan CPU
+Penjadwalan CPU (CPU Scheduling) adalah proses yang mengatur urutan dari beberapa eksekusi proses  oleh prosesor agar penggunaan CPU ini menjadi lebih efisien.Tujuannya yaitu untuk lebih memaksimalkan kinerja pada sistem, mengurangi waktu tunggu proses, serta dapat meningkatkan throughput atau jumlah proses yang selesai dalam satu waktu.
+2. Jenis-Jenis Algoritma Pemrogaman
+   Terdapat beberapa jenis pada algoritma penjadwalan CPU, yaitu:
+   - FCFS (First Come First Served)
+   - SJF (Shortest Job First)
+   - Priority Scheduling
+   - Round Robin
+   - Multilevel Queue Scheduling, dan lain sebagainya.
+   Namun, pada praktikum ini hanya difokuskan pada dua algoritma utama yaitu FCFS dan SJF.
+3. FCFS (First Come First Served)
+Algoritma FCFS yang bertugas untuk menjalankan suatu proses sesuai dengan urutan kedatangan.Proses yang terlebih dahulu tiba akan dieksekusi terlebih dulu sampai selesai.Pada proses FCFS ini bersifat non-preemptive (proses yang tidak dapat dihentikan ditengah).Hal ini, mudah diterapkan serta adil, namun dapat mengakibatkan proses singkat jadi menunggu lebih lama kalau ada proses besar sebelumnya.
+4. SJF (Shortest Job First)
+ Algoritma SJF lebih mengutamakan proses serta waktu eksekusi yang paling singkat untuk dikerjakan lebih dulu.Proses ini dapat digunakan dengan bentuk non-preemptive atau preemptive.Algoritma ini lebih sesuai karena bisa mengurangi waktu tunggu yang rata-rata, tetapi terdapat kekurangan pada proses ini yaitu kesulitan dalam memperkirakan durasi proses yang dapat mengakibatkan starvation atau proses yang panjang.
+5. Kesimpulan
+Secara keseluruhan, algoritma FCFS lebih mudah untuk diterapkan, tetapi kurang efisien karena proses dengan durasi eksekusi panjang dapat menyebabkan proses lain menunggu lebih lama.Sementara itu, SJF mampu menghasil waktu tunggu rata-rata yang lebih singkat serta kinerja yang lebih baik, namun penerapannya akan lebih sulit karena memerlukan perkiraan waktu eksekusi yang lebih akurat.Oleh karena itu, pemilihan untuk algoritma penjadwalan perlu disesuaikan dengan baik yang sesuai pada kebutuhan serta karakterisik sistem yang digunakan. 
 
 ---
 
