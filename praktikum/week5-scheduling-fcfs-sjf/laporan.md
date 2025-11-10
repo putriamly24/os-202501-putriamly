@@ -96,11 +96,58 @@ Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshots hasil](screenshots/FCFS-FJS.png)
 
 ---
-
+## Hasil Eksekusi
+- **Eksperimen 1 - FCFS (First Come First Served)**
+  Tabel perhitungan:
+  | Proses | Arrival | Burst | Start | Finish | Waiting Time = Start - Arrival | Turnaround Time = WT + Burst |
+  |--------|---------|-------|-------|--------|--------------------------------|------------------------------|
+  | P1 | 0 | 6 | 0 | 6 | 0 (0-0) | 6 (0+6) |
+  | P2 | 1 | 8 | 6 | 14 | 5 (6-1) | 13 (5+8) |
+  | P3 | 2 | 7 | 14 | 21 | 12 (14-2) | 19 (12+7) |
+  | P4 | 3 | 3 | 21 | 24 | 18 (21-3) | 21 (18+3) |
+  Penjumlahan rata-rata:
+  - Total WT = 0 + 5 + 12 + 18 = 35
+    Rata-rata pada WT = 35/4 = 8.75
+  - Total TAT = 6 + 13 + 19 + 21 = 59
+    Rata-rata pada TAT = 59/4 = 14.75
+- **Eksperimen 2 - SJF (Shortest Job First)**
+  Urutan pada atau yang berdasarkan kondisi arrival dan burst saat pemilihan:
+  - Pada t = 0:hanya P1 (burst 6) yang tersedia - jalankan P1.
+  - P1 selesai pada t = 6. Proses yang sudah sampai di t = 6:P2 (8), P3 (7), P4 (3).Pilihlah burst yang paling pendek yaitu P4.
+  - Setelah P4 selesai (t=9), tersisa P2 (8) dan P3 (7) yaitu pilih yang P3 (7) lalu P2 (8).
+  Tabel perhitungan:
+| Proses | Arrival | Burst | Start | Finish | Waiting Time = Start - Arrival | Turnaround Time = WT + Burst |
+|--------|---------|-------|-------|--------|--------------------------------|------------------------------|
+|
+  
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+-  Perbandingan hasil (angka):
+   - FCFS (First Come First Served)
+    - Average Waiting Time (WT) = 8.75
+    - Average Turnaround Time (TAT) = 14.75
+   - SJF (Shortest Job First)
+    - Average Waiting Time (WT) = 6.25
+    - Average Turnaround Time (TAT) = 12.25
+  - Perbedaan antara FCFS dan SJF 
+    - Pengurangan pada rata-rata WT = 2.5 unit-28.75% yang lebih kecil dibandingkan dengan FCFS.
+    - Pengurangan pada rata-rata TAT = 2.5 unit-16.95% yang lebih kecil dibandingkan dengan FCFS.
+-  SJF lebih unggul daripada FCFS
+   SJF akan lebih unggul dari FCFS jika beberapa kondisi dapat terpenuhi:
+   - Waktu eksekusi (burst time) proses yang dapat diketahui dengan cukup akurat atau proses yang bisa diperkirakan.
+   - Beban kerja yang terdiri dari banyak proses dengan durasi waktu yang berbeda ataupun banyak sekali proses yang pendek berdatangan.
+   - Lingkungan batch / non-interaktif menjadi tujuan utama dalam meminimalkan WT/TAT.
+   - Overhead yang digunakan untuk memilih proses terpendek yang bisa ditanggung scheduling cost rendah dibanding dari keuntungan.
+   Pada situasi seperti itu SJF dapat memaksimalkan proses penyelesaian menjadi lebih singkat atau cepat sehingga dapat menurunkan rata-rata waiting atau turnaround.
+-  FCFS lebih unggul daripada SJF
+   FCFS lebih unggul dari SJF jika dapat melibatkan:
+   - Keadilan prekditabilitas sangan penting atau urutan kedatangan yang dipertahankan.
+   - Waktu burst tidak diketahui atau sulit jika diperkirakan.
+   - Sistem interaktif dapat ringan yang membutuhkan respon adil untuk tiap pengguna.
+   - Implementasi harus secara sederhana tanpa overhead atau penjadwalan yang kompleks.
+- Kesimpulan
+  Pada eksperimen yang dijalankan, SJF mengalahkan FCFS atau rata-rata WT turun dari 8.75 menjadi 6.25 dan TAT dari 14.75 menjadi 12.25.
+  Pada dasarnya dapat dianalisis dengan pilih SJF untuk lingkungan batch dengan informasi burst yang sudah tersedia untuk tujuan utamanya yaitu menurunkan rata-rata waktu tunggu, serta pilih FCFS untuk kesederhanaan pada sistem interaktif yang tidak bisa diperkirakan.
+  
 
 ---
 
