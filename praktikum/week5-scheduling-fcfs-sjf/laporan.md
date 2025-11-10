@@ -105,11 +105,15 @@ Sertakan screenshot hasil percobaan atau diagram:
   | P2 | 1 | 8 | 6 | 14 | 5 (6-1) | 13 (5+8) |
   | P3 | 2 | 7 | 14 | 21 | 12 (14-2) | 19 (12+7) |
   | P4 | 3 | 3 | 21 | 24 | 18 (21-3) | 21 (18+3) |
-  Penjumlahan rata-rata:
+
+ Penjumlahan rata-rata:
   - Total WT = 0 + 5 + 12 + 18 = 35
     Rata-rata pada WT = 35/4 = 8.75
   - Total TAT = 6 + 13 + 19 + 21 = 59
     Rata-rata pada TAT = 59/4 = 14.75
+  Gantt chart (sederhana)
+  | P1 | P2     | P3     | P4 |
+  0    6       14       21      24
 - **Eksperimen 2 - SJF (Shortest Job First)**
   Urutan pada atau yang berdasarkan kondisi arrival dan burst saat pemilihan:
   - Pada t = 0:hanya P1 (burst 6) yang tersedia - jalankan P1.
@@ -118,7 +122,25 @@ Sertakan screenshot hasil percobaan atau diagram:
   Tabel perhitungan:
 | Proses | Arrival | Burst | Start | Finish | Waiting Time = Start - Arrival | Turnaround Time = WT + Burst |
 |--------|---------|-------|-------|--------|--------------------------------|------------------------------|
-|
+| P1 | 0 | 6 | 0 | 6 | 0 (0-0) | 6 (0+6) |
+| P4 | 3 | 3 | 6 | 9 | 3 (6-3) | 6 (3+3) |
+| P3 | 2 | 7 | 9 | 16 | 7 (9-2) | 14 (7+7) |
+| P2 | 1 | 8 | 16 | 24 | 15 (16-1) | 23 (15+8) |
+
+Penjumlahan dan rata-rata:
+- Total WT = 0 + 3 + 7 + 15 = 25
+  Rata-rata WT = 25 /4 = 6.25
+- Total TAT = 6 + 6 + 14 + 23 = 49
+  Rata-rata TAT = 49 / 4 = 12.25
+Gantt chart (sederhana)
+| P1 | P4 | P3     | P2     |
+0    6    9       16       24
+
+- **Perbandingan**
+   
+- **Kesimpulan**
+  - SJF lebih efisien karena dapat menghasilkan waktu tunggu dan penyelesaian rata-rata yang lebih kecil.
+  - FCFS lebih sederhana serta adil, tapi masih kurang dalam mengoptimalkan proses yang memiliki waktu eksekusi berbeda-beda.
   
 ## Analisis
 -  Perbandingan hasil (angka):
