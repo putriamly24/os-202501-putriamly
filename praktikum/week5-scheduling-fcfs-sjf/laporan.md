@@ -12,7 +12,6 @@ Topik: Penjadwalan CPU - FCFS dan SJF
 ---
 
 ## Tujuan
-Setelah menyelesaikan tugas ini, mahasiswa mampu:
 1. Menghitung waiting time dan turnaround time untuk algoritma FCFS dan SJF.
 2. Menyajikan hasil perhitungan dalam tabel yang rapi dan mudah dibaca.
 3. Membandingkan performa FCFS dan SJF berdasarkan hasil analisis.
@@ -94,7 +93,7 @@ dmesg | head
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshots hasil](screenshots/FCFS-FJS.png)
 
 ---
 
@@ -111,12 +110,22 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Apa perbedaan utama antara FCFS dan SJF?
+   Jawaban:
+   | Aspek | FCFS (First Come First Served) | SJF (Shortest Job First) |
+   |-------|--------------------------------|--------------------------|
+   | Jenis algoritma | Kadang non-preemptive (tidak dapat dipotong di tengah). | Dapat non-preemptive ataupun preemptive (SRTF). |
+   | Cara Kerja | Proses yang dikerjakan harus sesuai pada urutan kedatangan. | Proses yang dikerjakan dengan waktu eksekusi paling singkat alangkah baiknya dijalankan terlebih dahulu. |
+   | Watktu tunggu rata-rata | Proses lebih panjang atau lama dan bisa membuat proses yang lain menunggu. | Proses lebih cepat karena prosesnya singkat dan segera diselesaikan. |
+   | Keadilan | Prosesnya adil karena berdasarkan siapa yang datang duluan. | Prosesnya kurang adil karena proses yang lama dapat tertunda. |  
+2. Alasan SJF menghasilkan waktu tunggu rata-rata paling kecil?
+   Jawaban: Alasannya karena SJF lebih memprioritaskan proses dengan waktu kerja paling cepat terlebih dahulu.Dengan adanya hal tersebut, dapat mengakibatkan proses yang kecil cepat selesai dan waktu tunggu keseluruhan menjadi lebih singkat.SJF juga dapat dikatakan sebagai algoritma paling efisien untuk mengurangi rata-rata pada waktu tunggu.
+3. Kekurangan SJF di sistem interaktif? 
+   Jawaban:
+   Proses yang menggunakan SJF memiliki beberapa kendalan yang meliputi:
+- Kesulitan dalam menebak waktu pada proses yang  dijalankan, karena durasi yang tidak pasti.
+- Proses yang besar dapat tertunda jika selalu ada proses kecil yang berdatangan terus.
+- Kurang cepat dalam menanggapi pengguna, yang mengakibatkan ketidak cocokan untuk sistem yang membutuhkan respon langsung.
 
 ---
 
