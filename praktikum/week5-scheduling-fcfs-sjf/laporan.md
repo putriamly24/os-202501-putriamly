@@ -195,7 +195,74 @@ Sertakan screenshot hasil percobaan atau diagram:
 3. Pada pemilihan algoritma harus disesuaikan bersama kebutuhan sistem - SJF lebih cocok kepada sistem yang fokus pada kecepatan penyelesaian, sedangkan FCFS lebih sesuai pada sistem yang mengutamakan urutan serta keadilan eksekusi.
 
 ---
+## Tugas
+1. Hitung waiting time dan turnaround time dari minimal 2 skenario FCFS dan SJF!
+   - Skenario 1
+     -  FCFS (First Come First Served)
+       
+     | Proses | Arrival Time | Burst Time | Start Time | Finish Time  | Waiting Time | Turnaround Time |
+     |--------|--------------|------------|------------|--------------|--------------|-----------------|
+     | P1 | 0 | 8 | 0 | 8 | 0 | 8 |
+     | P2 | 1 | 5 | 8 | 13 | 7 | 12 |
+     | P3 | 2 | 9 | 13 | 22 | 11 | 20 |
+     | P4 | 3 | 7 | 22 | 29 | 19 | 26 |
+     | Total |   |   |   |   | 37 | 66 |
+     | Rata - rata |   |   |   |   | 9.25 | 16.5 |
 
+     -  SJF (Shortest Job First)
+       
+     | Proses | Arrival Time | Burt Time | Start Time | Finish Time | Waiting Time | Turnaround Time |
+     |-----|------------------|---------|-------------|-------------|---------------|----------------|
+     | P1 | 0 | 8 | 0 | 8 | 0 | 8 |
+     | P2 | 1 | 5 | 8 | 13 | 7 | 12 |
+     | P4 | 3 | 7 | 13 | 20 | 11 | 18 |
+     | P3 | 2 | 9 | 20 | 29 | 17 | 26 | 
+     | Total |  |  |  |  | 35 | 64 |
+     | Rata - rata |  |  |  |  | 8.75 | 16 |
+  - Skenario 2
+    - FCFS (First Come First Served)
+      
+      | Proses | Arrival Time | Burst Time | Start Time | Finish Time | Waiting Time  | Turnaround Time |
+      |--------|--------------|-----------|--------------|-------------|--------------|-----------------|
+      | P1 | 0 | 4 | 0 | 4 | 0 | 4 |
+      | P2 | 1 | 8 | 4 | 12 | 3 | 11 |
+      | P3 | 2 | 3 | 12 | 15 | 10 | 13 |
+      | P4 | 3 | 6 | 15 | 21 | 12 | 18 |
+      | Total |  |  |  |  | 25 | 46 |
+      | Rata - rata |  |  |  |   | 6.25 | 11.5 |
+    - SJF (Shortest Job First)
+      
+      | Proses | Arrival Time | Burst Time | Start Time | Finish Time | Waiting Time | Turnaround Time |
+      |--------|--------------|------------|------------|-------------|--------------|-----------------| 
+      | P1 | 0 | 4 | 0 | 4 | 0 | 4 |
+      | P3 | 2 | 3 | 4 | 7 | 1 | 6 |
+      | P4 | 3 | 6 | 7 | 13 | 4 | 10 |
+      | P2 | 1 | 8 | 13 | 21 | 10 | 18 |
+      | Total |  |  |  |  | 18 | 38 |
+      | Rata - rata |   |  |  |  | 4.5 | 9.75 |
+
+2. Sajikan hasil perhitungan dalam tabel perbandingan (FCFS vs SJF)!
+   | Skenario | Algoritma | Rata-rata Waiting Time | Rata-rata Turnaround Time |
+   |----------|-----------|------------------------|---------------------------|
+   | 1 | FCFS | 9.25 | 16.5 |
+   |  | SJF | 8.75 | 16 |
+   | 2 | FCFS | 6.25 | 11.5 |
+   |  | SJF | 4.5 | 9.75 |
+
+3. Analisis kelebihan dan kekurangan!
+   - FCFS (First Come First Served)
+     - Kelebihan: Pelayanan proses sesuai dengan urutan pada kedatangan, prosesnya mudah diterapkan dan sederhana.
+     - Kekurangan: Bisa menimbulkan proses lama karena menunggu proses yang panjang, tidak efisien jika proses panjang datang lebih awal.
+   - SJF (Shortest Job Served)
+     - Kelebihan: Waktu tunggu rata-rata cenderung lebih singkat dibanding FCFS, dan lebih meningkatkan throughput sistem.
+     - Kekurangan: Masih butuh perkiraan burst time yang lebih akurat, proses panjang bisa tertunda.
+
+  Berdasarkan hasil perbandingan tersebut, SJF lebih unggul atau efisien karena mempunyai waktu tunggu serta turnaround rata-rata lebih singkat dari FCFS.Tetapi FCFS lebih gampang untuk diterapkan dan adil dalam proses urutan kedatangan.
+       
+       
+      
+      
+      
 ## Quiz
 1. Apa perbedaan utama antara FCFS dan SJF?
    Jawaban:
@@ -218,8 +285,8 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini? Membuat tabel perbandingan di Excel.
+- Bagaimana cara Anda mengatasinya? Bertanya kepada teman.
 
 ---
 
