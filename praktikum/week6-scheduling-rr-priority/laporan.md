@@ -41,10 +41,12 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 - Gunakan time quantum (q) = 3.
 - Hitung waiting time dan turnaround time untuk tiap proses.
 - Simulasikan eksekusi menggunakan Gantt Chart (manual atau spreadsheet).
+
 ```
 | P1 | P2 | P3 | P4 | P1 | P3 | ...
 0    3    6    9   12   15   18  ...
 ```
+
 - Catat sisa burst time tiap putaran.
 3. **Eksperimen 2 – Priority Scheduling (Non-Preemptive)**
 
@@ -69,6 +71,7 @@ TAT[i] = WT[i] + Burst[i]
 - Buat tabel perbandingan seperti berikut:
 
 | Algoritma |	Avg Waiting Time |	Avg Turnaround Time	| Kelebihan |	Kekurangan |
+|-----------|------------------|----------------------|-----------|------------|
 | RR |	... |	... | Adil terhadap semua proses |	Tidak efisien jika quantum tidak tepat |
 | Priority |	... |	... |	Efisien untuk proses penting |	Potensi starvation pada prioritas rendah |
 
