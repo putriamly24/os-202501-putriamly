@@ -117,10 +117,14 @@ Sertakan screenshot hasil percobaan atau diagram:
 ## Kesimpulan
 - Round Robin akan menjamin pada setiap proses mendapatkan giliran CPU secara adil dan urut, sedangkan Priority Scheduling akan lebih menekankan eksekusi proses berdasarkan prioritas.
 - Time Quantum memengaruhi performa pada sistem, jika quantum kecil yang membuat sistem responsif tetapi banyak context switching, sedangkan pada quantum besar akan lebih efisien yang membuat respons lain jadi lambat.
-- Turnaround Time dan Waiting Time  menjadi indikator penting yang digunakan untuk menilai efisiensi dan fairness penjadwalan CPU. 
-
+- Turnaround Time dan Waiting Time  menjadi indikator penting yang digunakan untuk menilai efisiensi dan fairness penjadwalan CPU.
+  
 ---
+
 ## Tugas
+1. Hitung waiting time dan turnaround time untuk algoritma RR dan Priority.  
+3. Sajikan hasil perhitungan dan Gantt Chart dalam laporan.md.
+4. Bandingkan performa dan jelaskan pengaruh time quantum serta prioritas.
 
 ## Quiz
 1. Apa perbedaan utama antara Round Robin dan Priority Scheduling?
