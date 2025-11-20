@@ -103,7 +103,8 @@ TAT[i] = WT[i] + Burst[i]
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/rr_priority.jpg)
+![Screenshot hasil](screenshots/variasi time quantum.png)
 
 ---
 
