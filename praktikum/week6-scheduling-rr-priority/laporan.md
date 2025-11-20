@@ -124,8 +124,8 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Tugas
 1. Hitung waiting time dan turnaround time untuk algoritma RR dan Priority.  
-3. Sajikan hasil perhitungan dan Gantt Chart dalam laporan.md.
-4. Bandingkan performa dan jelaskan pengaruh time quantum serta prioritas.
+2. Sajikan hasil perhitungan dan Gantt Chart dalam laporan.md.
+3. Bandingkan performa dan jelaskan pengaruh time quantum serta prioritas.
 
 ## Quiz
 1. Apa perbedaan utama antara Round Robin dan Priority Scheduling?
