@@ -95,8 +95,17 @@ Deadlock hanya terjadi apabila empat kondisi berikut muncul secara bersamaan.
 ---
 
 ## Kode / Perintah
-
+Tuliskan potongan kode atau perintah utama:
 ```
+while true:
+  think()
+  pick_left_fork()
+  pick_right_fork()
+  eat()
+  put_left_fork()
+  put_right_fork()
+```
+
 
 ---
 
@@ -150,6 +159,7 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
    | Menggunakan counter dan operasi wait() dan sigmal() | Menggunakan condition variable dan prosedur terin tegrasi |
    | Programmer harus mengelola sendiri kapan kunci diambil/dilepas (rawan error) | Pengelolaan kunci dilakukan otomatis oleh monitor (lebih aman) |
    | Dapat menyebabkan deadlock jika salah penggunaan | Mengurangi resiko deadlock karena struktur lebih terkontrol |
+
 ---
 
 ## Refleksi Diri
