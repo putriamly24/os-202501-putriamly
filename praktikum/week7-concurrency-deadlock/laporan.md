@@ -42,15 +42,7 @@ Deadlock hanya terjadi apabila empat kondisi berikut muncul secara bersamaan.
 
 ---
 
-## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
-
----
-
-## Kode / Perintah
+## Langkah Pengerjaan
 1. **Persiapan Tim**
    - Bentuk kelompok beranggotakan 3–4 orang.  
    - Tentukan ketua dan pembagian tugas (analisis, implementasi, dokumentasi).
@@ -100,6 +92,10 @@ Deadlock hanya terjadi apabila empat kondisi berikut muncul secara bersamaan.
    git add .
    git commit -m "Minggu 7 - Sinkronisasi Proses & Deadlock"
    git push origin main
+---
+
+## Kode / Perintah
+
 ```
 
 ---
