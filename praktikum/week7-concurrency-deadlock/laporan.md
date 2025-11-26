@@ -110,6 +110,7 @@ while true:
 ---
 
 ## Hasil Eksekusi
+![alt text](<screenshots/deadlock.png>) 
 ### Eksperimen 1 – Simulasi Dining Philosophers (Deadlock Version)
 
 **Output**
@@ -211,6 +212,8 @@ Deadlock muncul karena keempat kondisi deadlock terpenuhi sekaligus:
 ---
 
 ### Eksperimen 2 – Versi Fixed Menggunakan Semaphore 
+![alt text](<screenshots/fixed semaphore.png>) 
+
 **Output**
 ```
 Filosof 0 siap...
