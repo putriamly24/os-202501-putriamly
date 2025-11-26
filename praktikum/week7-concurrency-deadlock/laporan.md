@@ -377,8 +377,8 @@ Aturan: setiap filosof wajib memanggil footman.acquire() sebelum mengambil garpu
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini? Memahami penyebab deadlock
+- Bagaimana cara Anda mengatasinya? Berdiskusi dengan teman
 
 ---
 
