@@ -6,9 +6,9 @@ Topik: Sinkronisasi Proses dan Masalah Deadlock
 
 ## Identitas Kelompok
   *Nama*  :
-  1. Rafika Rahma (250202917)
-  2. Putri Amaliya Rahmadani (250202924)
-  3. Keysya Ayu Anggita (250202944)
+  1. Rafika Rahma (250202917) - Analisis
+  2. Putri Amaliya Rahmadani (250202924) - Dokumentasi(Ketua) 
+  3. Keysya Ayu Anggita (250202944) - Implementasi
      
   *Kelas* : 1 IKRA
 ---
